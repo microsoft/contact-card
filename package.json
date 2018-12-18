@@ -1,0 +1,71 @@
+{
+  "name": "office-contact-card",
+  "version": "1.0.0",
+  "description": "Contact Card in MS Office style",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/contact-card"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint -p tsconfig.json -t stylish"
+  },
+  "keywords": [
+    "office",
+    "card",
+    "contact",
+    "persona"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "office-ui-fabric-react": ">=6.0.0 <7.0.0",
+    "react": ">=16.3.2-0 <17.0.0",
+    "react-dom": ">=16.3.2-0 <17.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/react": "^16.7.14",
+    "@types/react-dom": "^16.0.11",
+    "bfj": "^6.1.1",
+    "chalk": "^2.4.1",
+    "css-loader": "^2.0.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^7.0.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
+    "office-ui-fabric-react": ">=6.0.0 <7.0.0",
+    "path": "^0.12.7",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "react": ">=16.3.2-0 <17.0.0",
+    "react-dev-utils": "^6.1.1",
+    "react-dom": ">=16.3.2-0 <17.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.1.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.1",
+    "tslint": "^5.11.0",
+    "tslint-microsoft-contrib": "^6.0.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1"
+  },
+  "files": [
+    "lib/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "typings": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie < 11",
+    "not op_mini all"
+  ]
+}

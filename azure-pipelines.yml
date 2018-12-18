@@ -1,0 +1,23 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '10.x' # replace this value with the version that you need for your project
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+
+- task: Npm@1
+  displayName: 'npm run build'
+  inputs:
+    command: custom
+    customCommand: 'run build'
+
+- task: Npm@1
+  displayName: 'npm publish'
+  inputs:
+    command: publish
