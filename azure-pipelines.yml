@@ -17,4 +17,7 @@ steps:
     command: custom
     customCommand: 'run build'
 
-- script: npm publish
+- task: Npm@1
+  inputs:
+    command: publish
+    publishEndpoint: 'office-contact-card npm'
