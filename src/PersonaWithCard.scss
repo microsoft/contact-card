@@ -29,167 +29,168 @@
             background-color: #eaeaea;
         }
     }
-}
 
-.compact-card {
-    padding: 20px 24px;
+    .compact-card {
+        padding: 20px 24px;
+        
+        .ms-Persona-secondaryText {
+            font-size: 12px;
+        }
+    }
     
-    .ms-Persona-secondaryText {
-        font-size: 12px;
-    }
-}
-
-.extended-card {
-    padding: 20px 24px;
-
-    .shimmer {
-        margin-bottom: 16px;
-    }
-
-    .summary {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: block;
-
-        li {
+    .extended-card {
+        padding: 20px 24px;
+    
+        .shimmer {
+            margin-bottom: 16px;
+        }
+    
+        .summary {
+            padding: 0;
+            margin: 0;
+            list-style: none;
             display: block;
-        }
-
-        li + li {
-            border-top: solid #f4f4f4 1px;
-            margin-top: 10px;
-            padding-top: 20px;
-        }
-
-        .section-title {
-            padding-left: 0;
-            font-weight: bold;
-            margin-bottom: 18px;
-            height: 26px;
     
-            .chevron-icon {
-                margin-left: 8px;
+            li {
+                display: block;
+            }
+    
+            li + li {
+                border-top: solid #f4f4f4 1px;
+                margin-top: 10px;
+                padding-top: 20px;
+            }
+    
+            .section-title {
+                padding-left: 0;
+                font-weight: bold;
+                margin-bottom: 18px;
+                height: 26px;
+        
+                .chevron-icon {
+                    margin-left: 8px;
+                    color: #0078d4;
+                }
+    
+                &:hover, &:active, &:focus {
+                    color: #0078d4;
+                }
+            }
+        
+            .contact-row {
+                margin-bottom: 10px;
+        
+                .contact-icon {
+                    margin-right: 12px;
+                }
+        
+                .contact-link {
+                    height: 14px;
+                    line-height: 14px;
+                    display: inline-block;
+                }
+            }
+    
+            .more-details {
+                padding-left: 0;
+                font-weight: bold;
                 color: #0078d4;
-            }
-
-            &:hover, &:active, &:focus {
-                color: #0078d4;
+                .ms-Button-label {
+                    margin-left: 0;
+                }
             }
         }
     
-        .contact-row {
-            margin-bottom: 10px;
-    
-            .contact-icon {
-                margin-right: 12px;
-            }
-    
-            .contact-link {
-                height: 14px;
-                line-height: 14px;
-                display: inline-block;
-            }
-        }
-
-        .more-details {
-            padding-left: 0;
-            font-weight: bold;
-            color: #0078d4;
-            .ms-Button-label {
-                margin-left: 0;
-            }
-        }
-    }
-
-    .contact-details {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: block;
-
-        label {
-            color: #666666;
-            padding-bottom: 0;
-        }
-
-        li + li {
-            margin-top: 20px;
-        }
-    }
-
-    .org-hierarchy {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: block;
-
-        li {
+        .contact-details {
+            padding: 0;
+            margin: 0;
+            list-style: none;
             display: block;
+    
+            label {
+                color: #666666;
+                padding-bottom: 0;
+            }
+    
+            li + li {
+                margin-top: 20px;
+            }
         }
-
-        .hierarchy-splitter {
-            height: 12px;
-            width: 1px;
-            border-left: 1px solid #eaeaea;
-            margin: 0 auto;
-        }
-
-        .person {
-            width: 100%;
-            height: auto;
-            padding: 10px;
-            border: 1px solid #eaeaea;
-            border-radius: 2px;
-
-            .ms-Persona-tertiaryText {
+    
+        .org-hierarchy {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block;
+    
+            li {
                 display: block;
             }
-
-            &:hover {
-                background-color: #eaeaea;
-                border-color: #c8c8c8;
+    
+            .hierarchy-splitter {
+                height: 12px;
+                width: 1px;
+                border-left: 1px solid #eaeaea;
+                margin: 0 auto;
             }
-        }
-
-        .person-current {
-            width: 100%;
-            height: auto;
-            padding: 10px;
-            border: 2px solid #71afe5;
-            border-radius: 2px;
-            .ms-Persona-tertiaryText {
-                display: block;
-            }
-        }
-
-        .directs {
-            background-color: #f8f8f8;
-            border: 1px solid #eaeaea;
-            border-radius: 2px;
-
-            .directs-label {
-                margin-left: 10px;
-            }
-
-            ul {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-                display: block;
-
-                li {
+    
+            .person {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+                border: 1px solid #eaeaea;
+                border-radius: 2px;
+    
+                .ms-Persona-tertiaryText {
                     display: block;
                 }
-
-                .person {
-                    border: none;
+    
+                &:hover {
+                    background-color: #eaeaea;
+                    border-color: #c8c8c8;
+                }
+            }
+    
+            .person-current {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+                border: 2px solid #71afe5;
+                border-radius: 2px;
+                .ms-Persona-tertiaryText {
+                    display: block;
+                }
+            }
+    
+            .directs {
+                background-color: #f8f8f8;
+                border: 1px solid #eaeaea;
+                border-radius: 2px;
+    
+                .directs-label {
+                    margin-left: 10px;
+                }
+    
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    display: block;
+    
+                    li {
+                        display: block;
+                    }
+    
+                    .person {
+                        border: none;
+                    }
                 }
             }
         }
-    }
-
-    .org-hierarchy-title {
-        font-weight: bold;
+    
+        .org-hierarchy-title {
+            font-weight: bold;
+        }
     }
 }
+

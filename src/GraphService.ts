@@ -8,6 +8,7 @@ export module GraphService {
     const directsCache: { [userId: string]: Promise<IPersonaProfile[]> } = {};
 
     const profileFields = "id,displayName,jobTitle,mail,department,officeLocation,city,businessPhones,imAddresses,companyName";
+    const graphBaseUrl = "https://graph.microsoft.com";
 
 
     export async function resolveProfile(emailOrId: string): Promise<IPersonaProfile> {
@@ -145,7 +146,7 @@ export module GraphService {
         }
 
         const adToken = await GraphServiceAuthenticator.getAuthToken();
-        const batchRequest = new Request(`https://graph.microsoft.com/v1.0/$batch`, {
+        const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${adToken}`,
@@ -175,7 +176,7 @@ export module GraphService {
 
     async function getManagerInternal(emailOrId: string): Promise<IPersonaProfile> {
         const adToken = await GraphServiceAuthenticator.getAuthToken();
-        const request = new Request(`https://graph.microsoft.com/v1.0/users/${emailOrId}/manager?$select=${profileFields}`, {
+        const request = new Request(`${graphBaseUrl}/v1.0/users/${emailOrId}/manager?$select=${profileFields}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${adToken}` }
         });
@@ -192,7 +193,7 @@ export module GraphService {
 
     async function getPhotoUrlInternal(emailOrId: string): Promise<string> {
         const adToken = await GraphServiceAuthenticator.getAuthToken();
-        const request = new Request(`https://graph.microsoft.com/v1.0/users/${emailOrId}/photo/$value`, {
+        const request = new Request(`${graphBaseUrl}/v1.0/users/${emailOrId}/photo/$value`, {
             method: "GET",
             headers: { Authorization: `Bearer ${adToken}` }
         });
@@ -209,7 +210,7 @@ export module GraphService {
 
     async function getDirectsInternal(emailOrId: string): Promise<IPersonaProfile[]> {
         const adToken = await GraphServiceAuthenticator.getAuthToken();
-        const request = new Request(`https://graph.microsoft.com/v1.0/users/${emailOrId}/directReports?$select=${profileFields},accountEnabled`, {
+        const request = new Request(`${graphBaseUrl}/v1.0/users/${emailOrId}/directReports?$select=${profileFields},accountEnabled`, {
             method: "GET",
             headers: { Authorization: `Bearer ${adToken}` }
         });

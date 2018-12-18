@@ -3,8 +3,6 @@ import { Persona as PersonaOF, PersonaSize } from "office-ui-fabric-react";
 import { IPersonaProfile, PersonaShowMode, ShowModeFlags } from "./Types";
 import { GraphService } from "./GraphService";
 
-// tslint:disable:no-bitwise
-
 export interface IPersonaProps {
     id?: string;
     email?: string;
@@ -53,7 +51,9 @@ export class Persona extends React.Component<IPersonaProps, IPersonaState> {
                 className={this.props.className}
                 size={this.props.size || PersonaSize.size40}
                 text={this.state.profile.displayName}
+                // tslint:disable-next-line:no-bitwise
                 secondaryText={this.props.showMode & ShowModeFlags.Title ? this.state.profile.jobTitle : undefined}
+                // tslint:disable-next-line:no-bitwise
                 tertiaryText={this.props.showMode & ShowModeFlags.Department ? this.state.profile.department : undefined}
                 imageUrl={this.state.photoUrl}
                 imageAlt={this.state.profile.displayName}
