@@ -1,5 +1,6 @@
-
 [![Build Status](https://msmobilecenter.visualstudio.com/Mobile-Center/_apis/build/status/office-contact-card?branchName=master)](https://msmobilecenter.visualstudio.com/Mobile-Center/_build/latest?definitionId=3232?branchName=master)
+
+# Contact Card
 
 # Contributing
 

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "bump": "npm version patch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint -p tsconfig.json -t stylish"
   },
