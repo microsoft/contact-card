@@ -4,7 +4,7 @@
 
 Contact card in Office style is a React component, which provides contact card UX with information from your Azure Active Directory.
 
-[[https://github.com/Microsoft/contact-card/blob/master/sample/i/preview.png|alt=Preview]]
+![Preview](https://github.com/Microsoft/contact-card/blob/master/sample/i/preview.png)
 
 Main functionality:
 * Avatar preview
