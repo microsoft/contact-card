@@ -62,7 +62,7 @@
     "README.md"
   ],
   "typings": "lib/index.d.ts",
-  "main": "lib/index.js",
+  "main": "lib/office-contact-card.js",
   "browserslist": [
     ">0.2%",
     "not dead",
