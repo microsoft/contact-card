@@ -1,6 +1,51 @@
 [![Build Status](https://msmobilecenter.visualstudio.com/Mobile-Center/_apis/build/status/office-contact-card?branchName=master)](https://msmobilecenter.visualstudio.com/Mobile-Center/_build/latest?definitionId=3232?branchName=master)
 
-# Contact Card
+# Office Contact Card
+
+Contact card in Office style is a React component, which provides contact card UX with information from your Azure Active Directory.
+
+[[https://github.com/Microsoft/contact-card/blob/master/sample/i/preview.png|alt=Preview]]
+
+Main functionality:
+* Avatar preview
+* Name and title resolution
+* Hover card with:
+  * Contact info summary
+  * Manager summary
+  * Contact info details
+  * Full organization hierarchy
+  * People navigation history
+
+
+# How to Use it
+
+## Installation
+
+```shell
+npm i office-contact-card -s
+```
+
+You'd need to install these peer dependencies as well if you have not yet:
+
+```shell
+npm i react react-dom office-ui-fabric-react -s
+```
+
+## Authentication
+
+The component requires access to [MS Graph](https://developer.microsoft.com/en-us/graph).
+
+## Example
+
+```typescript
+import { GraphServiceAuthenticator, PersonaWithCard, PersonaShowMode } from "office-contact-card";
+
+GraphServiceAuthenticator.setAuthCallback(() => Promise.resolve("-token-") );
+
+function renderCard() {
+  return <PersonaWithCard email={"test@fabricam.com"} showMode={PersonaShowMode.NameTitle} />;
+}
+```
 
 # Contributing
 
