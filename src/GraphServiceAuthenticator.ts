@@ -1,6 +1,7 @@
 
 export module GraphServiceAuthenticator {
     let authCallback: () => Promise<string>;
+    let p: Promise<string> | undefined;
 
 
     export function setAuthCallback(callback: () => Promise<string>): void {
@@ -12,6 +13,13 @@ export module GraphServiceAuthenticator {
         if (!authCallback) {
             throw Error("AthCallback is not set. Call GraphServiceAuthenticator.setAuthCallback() to initialize it");
         }
-        return authCallback();
+        if (!p) {
+            p = authCallback();
+            p
+                .then(() => { p = undefined; })
+                .catch(() => { p = undefined; });
+        }
+
+        return p;
     }
 }
