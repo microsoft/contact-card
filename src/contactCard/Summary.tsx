@@ -2,6 +2,7 @@ import * as React from "react";
 import { ActionButton, Icon, Link, PersonaSize, Shimmer, ShimmerElementType } from "office-ui-fabric-react";
 import { Persona } from "../Persona";
 import { IPersonaProfile, PersonaShowMode } from "../Types";
+import { openLink } from "../Tools";
 
 
 export function renderSummary(
@@ -26,18 +27,18 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
         <li>
             <ActionButton className="section-title" onClick={onContactDetailsClick}>
                 Contact
-            <Icon iconName="ChevronRight" className="chevron-icon" />
+                <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
 
             <div className="contact-row">
                 <Icon iconName="Mail" className="contact-icon" />
-                <Link href={`mailto:${profile.email}`} className="contact-link">{profile.email}</Link>
+                <Link href={`mailto:${profile.email}`} className="contact-link" onClick={e => openLink(`mailto:${profile.email}`, e)}>{profile.email}</Link>
             </div>
             {
                 profile.businessPhone &&
                 <div className="contact-row">
                     <Icon iconName="Phone" className="contact-icon" />
-                    <Link href={`tel:${profile.businessPhone}`}>{profile.businessPhone}</Link>
+                    <Link href={`tel:${profile.businessPhone}`} onClick={e => openLink(`tel:${profile.businessPhone}`, e)}>{profile.businessPhone}</Link>
                 </div>
             }
             <div className="contact-row">
@@ -47,7 +48,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             </div>
             <ActionButton className="more-details" onClick={onContactDetailsClick}>
                 Show more
-        </ActionButton>
+            </ActionButton>
         </li>
     );
 }

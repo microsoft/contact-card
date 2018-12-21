@@ -7,6 +7,7 @@ import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
 import { renderSummary } from "./contactCard/Summary";
 import "./PersonaWithCard.scss";
+import { openLink } from "./Tools";
 
 
 export interface IPersonaWithCardProps {
@@ -167,12 +168,12 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
         return this.state.profile.email &&
             (
                 <FocusZone>
-                    <ActionButton iconProps={{ iconName: "Mail" }} onClick={() => window.location.href = `mailto:${this.state.profile.email}`}>
+                    <ActionButton iconProps={{ iconName: "Mail" }} onClick={e => openLink(`mailto:${this.state.profile.email}`, e)}>
                         Send email
                     </ActionButton>
                     {this.state.profile.imAddress &&
                         <TooltipHost content="Chat">
-                            <ActionButton iconProps={{ iconName: "Chat" }} onClick={() => window.location.href = `sip:${this.state.profile.imAddress}`} />
+                            <ActionButton iconProps={{ iconName: "Chat" }} onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
                         </TooltipHost>}
                 </FocusZone>
             );

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { css, AnimationClassNames, Label, Link } from "office-ui-fabric-react";
 import { IPersonaProfile } from "../Types";
+import { openLink } from "../Tools";
 
 
 export function renderContactDetails(profile: IPersonaProfile): React.ReactNode {
@@ -8,17 +9,17 @@ export function renderContactDetails(profile: IPersonaProfile): React.ReactNode 
         <ul className={css("contact-details", AnimationClassNames.slideLeftIn400)}>
             <li>
                 <Label>Email</Label>
-                <Link href={`mailto:${profile.email}`} className="contact-link">{profile.email}</Link>
+                <Link href={`mailto:${profile.email}`} className="contact-link" onClick={e => openLink(`mailto:${profile.email}`, e)}>{profile.email}</Link>
             </li>
             {profile.imAddress && (
                 <li>
                     <Label>Chat</Label>
-                    <Link href={`sip:${profile.email}`} className="contact-link">{profile.imAddress}</Link>
+                    <Link href={`sip:${profile.email}`} className="contact-link" onClick={e => openLink(`sip:${profile.email}`, e)}>{profile.imAddress}</Link>
                 </li>
             )}
             <li>
                 <Label>Work phone</Label>
-                <Link href={`tel:${profile.businessPhone}`}>{profile.businessPhone}</Link>
+                <Link href={`tel:${profile.businessPhone}`} className="contact-link" onClick={e => openLink(`tel:${profile.businessPhone}`, e)}>{profile.businessPhone}</Link>
             </li>
             <li>
                 <Label>Company</Label>
