@@ -1,6 +1,7 @@
 
 export module GraphServiceAuthenticator {
     let authCallback: () => Promise<string>;
+    let currentAuthPromise: Promise<string> | undefined;
 
 
     export function setAuthCallback(callback: () => Promise<string>): void {
@@ -12,6 +13,14 @@ export module GraphServiceAuthenticator {
         if (!authCallback) {
             throw Error("AthCallback is not set. Call GraphServiceAuthenticator.setAuthCallback() to initialize it");
         }
-        return authCallback();
+
+        if (!currentAuthPromise) {                      // prevent the callback bombarding. We can return a currently awaiting (and not fulfilled/rejected promise) in case there's one already
+            currentAuthPromise = authCallback();
+            currentAuthPromise
+                .then(() => { currentAuthPromise = undefined; })
+                .catch(() => { currentAuthPromise = undefined; });
+        }
+
+        return currentAuthPromise;
     }
 }
