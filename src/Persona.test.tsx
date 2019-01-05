@@ -57,7 +57,7 @@ test("renders Persona with extra props", async () => {
 });
 
 
-test("renders Persona fails if no Id or EMail", async () => {
+test("renders Persona fails if no Id and EMail", async () => {
     expect(() => Enzyme.shallow(<Persona showMode={PersonaShowMode.NameOnly} />))
         .toThrowError(/required/);
 });
