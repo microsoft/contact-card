@@ -42,7 +42,7 @@ function renderAllManagers(allManagers: IPersonaProfile[], onPersonaClick: (prof
         const mngr = allManagers[i];
         res.push(
             <li key={i}>
-                <ActionButton className="person" onClick={() => onPersonaClick(mngr)}>
+                <ActionButton className="person manager" onClick={() => onPersonaClick(mngr)}>
                     <Persona
                         id={mngr.id}
                         displayName={mngr.displayName}
@@ -73,7 +73,7 @@ function renderDirects(directs: IPersonaProfile[] | undefined, onPersonaClick: (
                 <ul>
                     {directs.map(direct => (
                         <li key={key++}>
-                            <ActionButton className="person" onClick={() => onPersonaClick(direct)}>
+                            <ActionButton className="person direct" onClick={() => onPersonaClick(direct)}>
                                 <Persona
                                     id={direct.id}
                                     displayName={direct.displayName}

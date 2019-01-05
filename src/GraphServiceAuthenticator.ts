@@ -11,7 +11,7 @@ export module GraphServiceAuthenticator {
 
     export async function getAuthToken(): Promise<string> {
         if (!authCallback) {
-            throw Error("AthCallback is not set. Call GraphServiceAuthenticator.setAuthCallback() to initialize it");
+            throw Error("AuthCallback is not set. Call GraphServiceAuthenticator.setAuthCallback() to initialize it");
         }
 
         if (!currentAuthPromise) {                      // prevent the callback bombarding. We can return a currently awaiting (and not fulfilled/rejected promise) in case there's one already

@@ -22,6 +22,7 @@ interface IPersonaState {
 export class Persona extends React.Component<IPersonaProps, IPersonaState> {
     private _isMounted: boolean = false;
 
+
     constructor(props: IPersonaProps) {
         super(props);
         this.state = this.buildStateFromProps(props);
@@ -32,6 +33,7 @@ export class Persona extends React.Component<IPersonaProps, IPersonaState> {
         this._isMounted = true;
         this.resolveProfile();
     }
+
 
     public componentWillUnmount() {
         this._isMounted = false;
