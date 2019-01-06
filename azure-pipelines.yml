@@ -24,6 +24,12 @@ steps:
     customCommand: 'run lint'
 
 - task: Npm@1
+  displayName: 'test'
+  inputs:
+    command: custom
+    customCommand: 'run test'
+
+- task: Npm@1
   displayName: 'npm publish'
   inputs:
     command: publish

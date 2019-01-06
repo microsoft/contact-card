@@ -6,7 +6,7 @@ import { buildProfileResponse, buildProfile } from "./supporting/Profile";
 
 beforeEach(() => {
     fetchMock.resetMocks();
-    GraphServiceAuthenticator.setAuthCallback(() => Promise.resolve("auth_token"));
+    GraphServiceAuthenticator.setAuthCallback(async () => Promise.resolve("auth_token"));
 });
 
 

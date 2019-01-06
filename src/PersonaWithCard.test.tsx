@@ -87,8 +87,8 @@ test("opens link in Compact card", async () => {
 
 
 test("renders Expanded card with progress", async () => {
-    GraphService.resolveProfile = () => Promise.resolve(buildProfile(1));
-    GraphService.getManager = () => Promise.resolve(buildProfile(2));
+    GraphService.resolveProfile = async () => Promise.resolve(buildProfile(1));
+    GraphService.getManager = async () => Promise.resolve(buildProfile(2));
 
     const openedCard = Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
     openedCard.find(HoverCard).props().onCardVisible!();
@@ -137,8 +137,8 @@ test("switches to summaryMode when clicking on person in Compact card", async ()
 
 
 test("renders Expanded card with OrgHierarchy", async () => {
-    GraphService.getAllManagers = () => Promise.resolve([buildProfile(2), buildProfile(3)]);
-    GraphService.getDirects = () => Promise.resolve([buildProfile(12), buildProfile(13)]);
+    GraphService.getAllManagers = async () => Promise.resolve([buildProfile(2), buildProfile(3)]);
+    GraphService.getDirects = async () => Promise.resolve([buildProfile(12), buildProfile(13)]);
 
     const openedCard = await renderOpenedCard();
     let expandedCard = renderExpandedCard(openedCard);
@@ -179,8 +179,8 @@ test("renders prev Person", async () => {
 
 async function renderOpenedCard(profile?: IPersonaProfile) {
     const extractNum = (s: string) => parseInt(s.match(/\d+/)![0], 10);
-    GraphService.resolveProfile = (userId) => Promise.resolve(profile || buildProfile(extractNum(userId)));
-    GraphService.getManager = (userId) => Promise.resolve(buildProfile(extractNum(userId) + 1));
+    GraphService.resolveProfile = async (userId) => Promise.resolve(profile || buildProfile(extractNum(userId)));
+    GraphService.getManager = async (userId) => Promise.resolve(buildProfile(extractNum(userId) + 1));
 
     const wrap = Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
     wrap.find(HoverCard).props().onCardVisible!();

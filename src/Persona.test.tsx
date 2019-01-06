@@ -16,8 +16,8 @@ afterEach(() => {
 
 
 test("renders Persona by Id", async () => {
-    GraphService.resolveProfile = () => Promise.resolve(buildProfile(1));
-    GraphService.getPhotoUrl = () => Promise.resolve("blob://pic1");
+    GraphService.resolveProfile = async () => Promise.resolve(buildProfile(1));
+    GraphService.getPhotoUrl = async () => Promise.resolve("blob://pic1");
 
     const wrap = Enzyme.shallow(<Persona id="userId1" showMode={PersonaShowMode.NameOnly} />);
     await waitNextTick();
@@ -32,8 +32,8 @@ test("renders Persona by Email", async () => {
 
 
 test("renders Persona with Title", async () => {
-    GraphService.resolveProfile = () => Promise.resolve(buildProfile(1));
-    GraphService.getPhotoUrl = () => Promise.resolve("blob://pic1");
+    GraphService.resolveProfile = async () => Promise.resolve(buildProfile(1));
+    GraphService.getPhotoUrl = async () => Promise.resolve("blob://pic1");
 
     const wrap = Enzyme.shallow(<Persona id="userId1" showMode={PersonaShowMode.NameTitle} />);
     await waitNextTick();
@@ -42,8 +42,8 @@ test("renders Persona with Title", async () => {
 
 
 test("renders Persona with Title and Department", async () => {
-    GraphService.resolveProfile = () => Promise.resolve(buildProfile(1));
-    GraphService.getPhotoUrl = () => Promise.resolve("blob://pic1");
+    GraphService.resolveProfile = async () => Promise.resolve(buildProfile(1));
+    GraphService.getPhotoUrl = async () => Promise.resolve("blob://pic1");
 
     const wrap = Enzyme.shallow(<Persona id="userId1" showMode={PersonaShowMode.NameTitleDepartment} />);
     await waitNextTick();
@@ -64,8 +64,8 @@ test("renders Persona fails if no Id and EMail", async () => {
 
 
 test("renders Persona with failed profile", async () => {
-    GraphService.resolveProfile = () => Promise.reject(new Error());
-    GraphService.getPhotoUrl = () => Promise.reject(new Error());
+    GraphService.resolveProfile = async () => Promise.reject(new Error());
+    GraphService.getPhotoUrl = async () => Promise.reject(new Error());
 
     const wrap = Enzyme.shallow(<Persona id="userId1" showMode={PersonaShowMode.NameOnly} />);
     await waitNextTick();

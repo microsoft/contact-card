@@ -2,13 +2,13 @@ import { GraphServiceAuthenticator } from "./GraphServiceAuthenticator";
 
 
 test("getAuthToken() returns authToken", async () => {
-    GraphServiceAuthenticator.setAuthCallback(() => Promise.resolve("auth_token"));
+    GraphServiceAuthenticator.setAuthCallback(async () => Promise.resolve("auth_token"));
     await expect(GraphServiceAuthenticator.getAuthToken()).resolves.toBe("auth_token");
 });
 
 
 test("getAuthToken() rejects if authCallback fails", async () => {
-    GraphServiceAuthenticator.setAuthCallback(() => Promise.reject(new Error("err1")));
+    GraphServiceAuthenticator.setAuthCallback(async () => Promise.reject(new Error("err1")));
     await expect(GraphServiceAuthenticator.getAuthToken()).rejects.toThrow("err1");
 });
 
