@@ -10,6 +10,7 @@
     "build": "node scripts/build.js",
     "bump": "npm version patch",
     "test": "node scripts/test.js --env=jsdom",
+    "test-ci": "jest",
     "lint": "tslint -p tsconfig.json -t stylish"
   },
   "keywords": [

@@ -27,7 +27,7 @@ steps:
   displayName: 'test'
   inputs:
     command: custom
-    customCommand: 'run test'
+    customCommand: 'run test-ci'
 
 - task: Npm@1
   displayName: 'npm publish'
