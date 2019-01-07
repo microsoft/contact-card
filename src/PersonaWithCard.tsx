@@ -168,12 +168,12 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
         return this.state.profile.email &&
             (
                 <FocusZone>
-                    <ActionButton iconProps={{ iconName: "Mail" }} onClick={e => openLink(`mailto:${this.state.profile.email}`, e)}>
+                    <ActionButton iconProps={{ iconName: "Mail" }} className="mail-link" onClick={e => openLink(`mailto:${this.state.profile.email}`, e)}>
                         Send email
                     </ActionButton>
                     {this.state.profile.imAddress &&
                         <TooltipHost content="Chat">
-                            <ActionButton iconProps={{ iconName: "Chat" }} onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
+                            <ActionButton iconProps={{ iconName: "Chat" }} className="chat-link" onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
                         </TooltipHost>}
                 </FocusZone>
             );

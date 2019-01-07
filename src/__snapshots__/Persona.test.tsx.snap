@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Persona by Email 1`] = `
+<StyledPersonaBase
+  imageAlt="userId1"
+  size={12}
+  text="userId1"
+/>
+`;
+
+exports[`renders Persona by Id 1`] = `
+<StyledPersonaBase
+  imageAlt="Display Name 1"
+  imageUrl="blob://pic1"
+  size={12}
+  text="Display Name 1"
+/>
+`;
+
+exports[`renders Persona with Title 1`] = `
+<StyledPersonaBase
+  imageAlt="Display Name 1"
+  imageUrl="blob://pic1"
+  secondaryText="Job Title 1"
+  size={12}
+  text="Display Name 1"
+/>
+`;
+
+exports[`renders Persona with Title and Department 1`] = `
+<StyledPersonaBase
+  imageAlt="Display Name 1"
+  imageUrl="blob://pic1"
+  secondaryText="Job Title 1"
+  size={12}
+  tertiaryText="Department 1"
+  text="Display Name 1"
+/>
+`;
+
+exports[`renders Persona with extra props 1`] = `
+<StyledPersonaBase
+  className="class1"
+  imageAlt="Initial Display Name 1"
+  size={15}
+  text="Initial Display Name 1"
+/>
+`;
+
+exports[`renders Persona with failed profile 1`] = `
+<StyledPersonaBase
+  size={12}
+/>
+`;

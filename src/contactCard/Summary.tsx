@@ -25,20 +25,19 @@ export function renderSummary(
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
     return (
         <li>
-            <ActionButton className="section-title" onClick={onContactDetailsClick}>
-                Contact
-                <Icon iconName="ChevronRight" className="chevron-icon" />
+            <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
+                Contact <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
 
             <div className="contact-row">
                 <Icon iconName="Mail" className="contact-icon" />
-                <Link href={`mailto:${profile.email}`} className="contact-link" onClick={e => openLink(`mailto:${profile.email}`, e)}>{profile.email}</Link>
+                <Link href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)}>{profile.email}</Link>
             </div>
             {
                 profile.businessPhone &&
                 <div className="contact-row">
                     <Icon iconName="Phone" className="contact-icon" />
-                    <Link href={`tel:${profile.businessPhone}`} onClick={e => openLink(`tel:${profile.businessPhone}`, e)}>{profile.businessPhone}</Link>
+                    <Link href={`tel:${profile.businessPhone}`} className="contact-link business-phone" onClick={e => openLink(`tel:${profile.businessPhone}`, e)}>{profile.businessPhone}</Link>
                 </div>
             }
             <div className="contact-row">
@@ -46,7 +45,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details" onClick={onContactDetailsClick}>
+            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick}>
                 Show more
             </ActionButton>
         </li>
@@ -64,13 +63,12 @@ function renderOrgSummary(
         <li>
             {(manager || isManagerLoading) &&
                 <>
-                    <ActionButton className="section-title" onClick={onOrgDetailsClick}>
-                        Reports to
-                    <Icon iconName="ChevronRight" className="chevron-icon" />
+                    <ActionButton className="section-title org-details-button" onClick={onOrgDetailsClick}>
+                        Reports to <Icon iconName="ChevronRight" className="chevron-icon" />
                     </ActionButton>
                     {
                         manager ?
-                            <ActionButton className="person" onClick={() => onPersonaClick(manager)}>
+                            <ActionButton className="person manager" onClick={() => onPersonaClick(manager)}>
                                 <Persona
                                     id={manager.id}
                                     displayName={manager.displayName}
@@ -85,7 +83,7 @@ function renderOrgSummary(
                     }
                 </>
             }
-            <ActionButton className="more-details" onClick={onOrgDetailsClick}>
+            <ActionButton className="more-details org-details" onClick={onOrgDetailsClick}>
                 Show organization
             </ActionButton>
         </li>

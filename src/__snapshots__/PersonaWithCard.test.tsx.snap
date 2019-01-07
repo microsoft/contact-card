@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Compact card 1`] = `
+<div>
+  <div
+    className="compact-card"
+  >
+    <Persona
+      displayName="Display Name 1"
+      email="user1@contoso.com"
+      id="userId1"
+      showMode={7}
+      size={14}
+    />
+    <FocusZone
+      direction={2}
+      isCircularNavigation={false}
+    >
+      <CustomizedActionButton
+        className="mail-link"
+        iconProps={
+          Object {
+            "iconName": "Mail",
+          }
+        }
+        onClick={[Function]}
+      >
+        Send email
+      </CustomizedActionButton>
+      <StyledTooltipHostBase
+        content="Chat"
+      >
+        <CustomizedActionButton
+          className="chat-link"
+          iconProps={
+            Object {
+              "iconName": "Chat",
+            }
+          }
+          onClick={[Function]}
+        />
+      </StyledTooltipHostBase>
+    </FocusZone>
+  </div>
+</div>
+`;
+
+exports[`renders Compact card w/o IM address 1`] = `
+<div>
+  <div
+    className="compact-card"
+  >
+    <Persona
+      displayName="Display Name 1"
+      email="user1@contoso.com"
+      id="userId1"
+      showMode={7}
+      size={14}
+    />
+    <FocusZone
+      direction={2}
+      isCircularNavigation={false}
+    >
+      <CustomizedActionButton
+        className="mail-link"
+        iconProps={
+          Object {
+            "iconName": "Mail",
+          }
+        }
+        onClick={[Function]}
+      >
+        Send email
+      </CustomizedActionButton>
+    </FocusZone>
+  </div>
+</div>
+`;
+
+exports[`renders Compact card with ContactDetails 1`] = `
+<div>
+  <div
+    className="compact-card css-203"
+  >
+    <CustomizedActionButton
+      className="person"
+      onClick={[Function]}
+    >
+      <Persona
+        displayName="Display Name 1"
+        email="user1@contoso.com"
+        id="userId1"
+        showMode={1}
+        size={12}
+      />
+    </CustomizedActionButton>
+  </div>
+</div>
+`;
+
+exports[`renders Expanded card with ContactDetails 1`] = `
+<div>
+  <div
+    className="extended-card"
+  >
+    <div
+      0={
+        Object {
+          "businessPhone": "555-123-4561",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 1",
+          "displayName": "Display Name 1",
+          "email": "user1@contoso.com",
+          "id": "userId1",
+          "imAddress": "im-user1@contoso.com",
+          "jobTitle": "Job Title 1",
+          "officeLocation": "1234-1",
+        }
+      }
+      id="ContactDetailsMock"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Expanded card with OrgHierarchy 1`] = `
+<div>
+  <div
+    className="extended-card"
+  >
+    <div
+      0={
+        Object {
+          "businessPhone": "555-123-4561",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 1",
+          "displayName": "Display Name 1",
+          "email": "user1@contoso.com",
+          "id": "userId1",
+          "imAddress": "im-user1@contoso.com",
+          "jobTitle": "Job Title 1",
+          "officeLocation": "1234-1",
+        }
+      }
+      1={
+        Array [
+          Object {
+            "businessPhone": "555-123-4562",
+            "city": "Redmond",
+            "companyName": "Contoso",
+            "department": "Department 2",
+            "displayName": "Display Name 2",
+            "email": "user2@contoso.com",
+            "id": "userId2",
+            "imAddress": "im-user2@contoso.com",
+            "jobTitle": "Job Title 2",
+            "officeLocation": "1234-2",
+          },
+          Object {
+            "businessPhone": "555-123-4563",
+            "city": "Redmond",
+            "companyName": "Contoso",
+            "department": "Department 3",
+            "displayName": "Display Name 3",
+            "email": "user3@contoso.com",
+            "id": "userId3",
+            "imAddress": "im-user3@contoso.com",
+            "jobTitle": "Job Title 3",
+            "officeLocation": "1234-3",
+          },
+        ]
+      }
+      2={
+        Array [
+          Object {
+            "businessPhone": "555-123-45612",
+            "city": "Redmond",
+            "companyName": "Contoso",
+            "department": "Department 12",
+            "displayName": "Display Name 12",
+            "email": "user12@contoso.com",
+            "id": "userId12",
+            "imAddress": "im-user12@contoso.com",
+            "jobTitle": "Job Title 12",
+            "officeLocation": "1234-12",
+          },
+          Object {
+            "businessPhone": "555-123-45613",
+            "city": "Redmond",
+            "companyName": "Contoso",
+            "department": "Department 13",
+            "displayName": "Display Name 13",
+            "email": "user13@contoso.com",
+            "id": "userId13",
+            "imAddress": "im-user13@contoso.com",
+            "jobTitle": "Job Title 13",
+            "officeLocation": "1234-13",
+          },
+        ]
+      }
+      3={[Function]}
+      id="OrgHierarchyMock"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Expanded card with Summary 1`] = `
+<div>
+  <div
+    className="extended-card"
+  >
+    <div
+      0={
+        Object {
+          "businessPhone": "555-123-4561",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 1",
+          "displayName": "Display Name 1",
+          "email": "user1@contoso.com",
+          "id": "userId1",
+          "imAddress": "im-user1@contoso.com",
+          "jobTitle": "Job Title 1",
+          "officeLocation": "1234-1",
+        }
+      }
+      1={
+        Object {
+          "businessPhone": "555-123-4562",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 2",
+          "displayName": "Display Name 2",
+          "email": "user2@contoso.com",
+          "id": "userId2",
+          "imAddress": "im-user2@contoso.com",
+          "jobTitle": "Job Title 2",
+          "officeLocation": "1234-2",
+        }
+      }
+      2={false}
+      3={[Function]}
+      4={[Function]}
+      5={[Function]}
+      id="SummaryMock"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Expanded card with progress 1`] = `
+<div>
+  <div
+    className="extended-card"
+  >
+    <StyledShimmerBase
+      className="shimmer"
+    />
+    <StyledShimmerBase
+      className="shimmer"
+    />
+    <StyledShimmerBase
+      className="shimmer"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders PersonaWithCard initial state 1`] = `
+<StyledHoverCardBase
+  className="persona-hover-card"
+  expandingCardProps={
+    Object {
+      "compactCardHeight": 145,
+      "expandedCardHeight": 385,
+      "onRenderCompactCard": [Function],
+      "onRenderExpandedCard": [Function],
+    }
+  }
+  instantOpenOnClick={true}
+  onCardVisible={[Function]}
+  trapFocus={true}
+>
+  <Persona
+    className="contact-card-persona"
+    id="userId1"
+    showMode={1}
+  />
+</StyledHoverCardBase>
+`;
+
+exports[`renders PersonaWithCard with extra props 1`] = `
+<StyledHoverCardBase
+  className="persona-hover-card"
+  expandingCardProps={
+    Object {
+      "compactCardHeight": 145,
+      "expandedCardHeight": 385,
+      "onRenderCompactCard": [Function],
+      "onRenderExpandedCard": [Function],
+    }
+  }
+  instantOpenOnClick={true}
+  onCardVisible={[Function]}
+  trapFocus={true}
+>
+  <Persona
+    className="contact-card-persona"
+    displayName="Initial Display Name 1"
+    id="userId1"
+    showMode={1}
+    size={15}
+  />
+</StyledHoverCardBase>
+`;
+
+exports[`renders next Person 1`] = `
+<div>
+  <div
+    className="back-section"
+  >
+    <StyledTooltipHostBase
+      content="Back to Display Name 1"
+    >
+      <CustomizedActionButton
+        className="back-button"
+        iconProps={
+          Object {
+            "iconName": "Back",
+          }
+        }
+        onClick={[Function]}
+      />
+    </StyledTooltipHostBase>
+  </div>
+  <div
+    className="compact-card"
+  >
+    <Persona
+      displayName="Display Name 2"
+      email="user2@contoso.com"
+      id="userId2"
+      showMode={7}
+      size={14}
+    />
+    <FocusZone
+      direction={2}
+      isCircularNavigation={false}
+    >
+      <CustomizedActionButton
+        className="mail-link"
+        iconProps={
+          Object {
+            "iconName": "Mail",
+          }
+        }
+        onClick={[Function]}
+      >
+        Send email
+      </CustomizedActionButton>
+      <StyledTooltipHostBase
+        content="Chat"
+      >
+        <CustomizedActionButton
+          className="chat-link"
+          iconProps={
+            Object {
+              "iconName": "Chat",
+            }
+          }
+          onClick={[Function]}
+        />
+      </StyledTooltipHostBase>
+    </FocusZone>
+  </div>
+</div>
+`;
+
+exports[`renders prev Person 1`] = `
+<div>
+  <div
+    className="compact-card"
+  >
+    <Persona
+      displayName="Display Name 1"
+      email="user1@contoso.com"
+      id="userId1"
+      showMode={7}
+      size={14}
+    />
+    <FocusZone
+      direction={2}
+      isCircularNavigation={false}
+    >
+      <CustomizedActionButton
+        className="mail-link"
+        iconProps={
+          Object {
+            "iconName": "Mail",
+          }
+        }
+        onClick={[Function]}
+      >
+        Send email
+      </CustomizedActionButton>
+      <StyledTooltipHostBase
+        content="Chat"
+      >
+        <CustomizedActionButton
+          className="chat-link"
+          iconProps={
+            Object {
+              "iconName": "Chat",
+            }
+          }
+          onClick={[Function]}
+        />
+      </StyledTooltipHostBase>
+    </FocusZone>
+  </div>
+</div>
+`;
+
+exports[`switches to summaryMode when clicking on person in Compact card 1`] = `
+<div>
+  <div
+    className="extended-card"
+  >
+    <div
+      0={
+        Object {
+          "businessPhone": "555-123-4561",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 1",
+          "displayName": "Display Name 1",
+          "email": "user1@contoso.com",
+          "id": "userId1",
+          "imAddress": "im-user1@contoso.com",
+          "jobTitle": "Job Title 1",
+          "officeLocation": "1234-1",
+        }
+      }
+      1={
+        Object {
+          "businessPhone": "555-123-4562",
+          "city": "Redmond",
+          "companyName": "Contoso",
+          "department": "Department 2",
+          "displayName": "Display Name 2",
+          "email": "user2@contoso.com",
+          "id": "userId2",
+          "imAddress": "im-user2@contoso.com",
+          "jobTitle": "Job Title 2",
+          "officeLocation": "1234-2",
+        }
+      }
+      2={false}
+      3={[Function]}
+      4={[Function]}
+      5={[Function]}
+      id="SummaryMock"
+    />
+  </div>
+</div>
+`;

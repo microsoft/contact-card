@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders OrgDetails w/o directs 1`] = `
+<div>
+  <StyledLabelBase
+    className="org-hierarchy-title"
+  >
+    Organization
+  </StyledLabelBase>
+  <ul
+    className="org-hierarchy css-47"
+  >
+    <li
+      key="1"
+    >
+      <CustomizedActionButton
+        className="person manager"
+        onClick={[Function]}
+      >
+        <Persona
+          displayName="Display Name 3"
+          id="userId3"
+          showMode={7}
+          size={13}
+        />
+      </CustomizedActionButton>
+    </li>
+    <div
+      className="hierarchy-splitter"
+      key="spl-1"
+    />
+    <li
+      key="0"
+    >
+      <CustomizedActionButton
+        className="person manager"
+        onClick={[Function]}
+      >
+        <Persona
+          displayName="Display Name 2"
+          id="userId2"
+          showMode={7}
+          size={13}
+        />
+      </CustomizedActionButton>
+    </li>
+    <div
+      className="hierarchy-splitter"
+      key="spl-0"
+    />
+    <li
+      className="person-current"
+    >
+      <Persona
+        displayName="Display Name 1"
+        id="userId1"
+        showMode={7}
+        size={13}
+      />
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders OrgDetails w/o managers 1`] = `
+<div>
+  <ul
+    className="org-hierarchy css-47"
+  >
+    <li
+      className="person"
+    >
+      <StyledShimmerBase
+        shimmerElements={
+          Array [
+            Object {
+              "height": 48,
+              "type": 2,
+            },
+            Object {
+              "type": 3,
+              "width": 12,
+            },
+            Object {
+              "type": 1,
+            },
+          ]
+        }
+        width="80%"
+      />
+    </li>
+    <div
+      className="hierarchy-splitter"
+    />
+    <li
+      className="person"
+    >
+      <StyledShimmerBase
+        shimmerElements={
+          Array [
+            Object {
+              "height": 48,
+              "type": 2,
+            },
+            Object {
+              "type": 3,
+              "width": 12,
+            },
+            Object {
+              "type": 1,
+            },
+          ]
+        }
+        width="80%"
+      />
+    </li>
+    <div
+      className="hierarchy-splitter"
+    />
+    <li
+      className="person"
+    >
+      <StyledShimmerBase
+        shimmerElements={
+          Array [
+            Object {
+              "height": 48,
+              "type": 2,
+            },
+            Object {
+              "type": 3,
+              "width": 12,
+            },
+            Object {
+              "type": 1,
+            },
+          ]
+        }
+        width="80%"
+      />
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders full OrgDetails 1`] = `
+<div>
+  <StyledLabelBase
+    className="org-hierarchy-title"
+  >
+    Organization
+  </StyledLabelBase>
+  <ul
+    className="org-hierarchy css-47"
+  >
+    <li
+      key="1"
+    >
+      <CustomizedActionButton
+        className="person manager"
+        onClick={[Function]}
+      >
+        <Persona
+          displayName="Display Name 3"
+          id="userId3"
+          showMode={7}
+          size={13}
+        />
+      </CustomizedActionButton>
+    </li>
+    <div
+      className="hierarchy-splitter"
+      key="spl-1"
+    />
+    <li
+      key="0"
+    >
+      <CustomizedActionButton
+        className="person manager"
+        onClick={[Function]}
+      >
+        <Persona
+          displayName="Display Name 2"
+          id="userId2"
+          showMode={7}
+          size={13}
+        />
+      </CustomizedActionButton>
+    </li>
+    <div
+      className="hierarchy-splitter"
+      key="spl-0"
+    />
+    <li
+      className="person-current"
+    >
+      <Persona
+        displayName="Display Name 1"
+        id="userId1"
+        showMode={7}
+        size={13}
+      />
+    </li>
+    <div
+      className="hierarchy-splitter"
+    />
+    <li
+      className="directs"
+    >
+      <StyledLabelBase
+        className="directs-label"
+      >
+        Direct reports (
+        2
+        )
+      </StyledLabelBase>
+      <ul>
+        <li
+          key="0"
+        >
+          <CustomizedActionButton
+            className="person direct"
+            onClick={[Function]}
+          >
+            <Persona
+              displayName="Display Name 4"
+              id="userId4"
+              showMode={3}
+              size={13}
+            />
+          </CustomizedActionButton>
+        </li>
+        <li
+          key="1"
+        >
+          <CustomizedActionButton
+            className="person direct"
+            onClick={[Function]}
+          >
+            <Persona
+              displayName="Display Name 5"
+              id="userId5"
+              showMode={3}
+              size={13}
+            />
+          </CustomizedActionButton>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;

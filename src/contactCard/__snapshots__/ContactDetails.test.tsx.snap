@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ContactDetails w/o IM 1`] = `
+<div>
+  <ul
+    className="contact-details css-47"
+  >
+    <li>
+      <StyledLabelBase>
+        Email
+      </StyledLabelBase>
+      <StyledLinkBase
+        className="contact-link email"
+        href="mailto:user1@contoso.com"
+        onClick={[Function]}
+      >
+        user1@contoso.com
+      </StyledLinkBase>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Work phone
+      </StyledLabelBase>
+      <StyledLinkBase
+        className="contact-link business-phone"
+        href="tel:555-123-4561"
+        onClick={[Function]}
+      >
+        555-123-4561
+      </StyledLinkBase>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Company
+      </StyledLabelBase>
+      <span>
+        Contoso
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Job title
+      </StyledLabelBase>
+      <span>
+        Job Title 1
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Department
+      </StyledLabelBase>
+      <span>
+        Department 1
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Office location
+      </StyledLabelBase>
+      <span>
+        1234-1
+      </span>
+      <span>
+         
+        Redmond
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders full ContactDetails 1`] = `
+<div>
+  <ul
+    className="contact-details css-47"
+  >
+    <li>
+      <StyledLabelBase>
+        Email
+      </StyledLabelBase>
+      <StyledLinkBase
+        className="contact-link email"
+        href="mailto:user1@contoso.com"
+        onClick={[Function]}
+      >
+        user1@contoso.com
+      </StyledLinkBase>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Chat
+      </StyledLabelBase>
+      <StyledLinkBase
+        className="contact-link chat"
+        href="sip:im-user1@contoso.com"
+        onClick={[Function]}
+      >
+        im-user1@contoso.com
+      </StyledLinkBase>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Work phone
+      </StyledLabelBase>
+      <StyledLinkBase
+        className="contact-link business-phone"
+        href="tel:555-123-4561"
+        onClick={[Function]}
+      >
+        555-123-4561
+      </StyledLinkBase>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Company
+      </StyledLabelBase>
+      <span>
+        Contoso
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Job title
+      </StyledLabelBase>
+      <span>
+        Job Title 1
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Department
+      </StyledLabelBase>
+      <span>
+        Department 1
+      </span>
+    </li>
+    <li>
+      <StyledLabelBase>
+        Office location
+      </StyledLabelBase>
+      <span>
+        1234-1
+      </span>
+      <span>
+         
+        Redmond
+      </span>
+    </li>
+  </ul>
+</div>
+`;
