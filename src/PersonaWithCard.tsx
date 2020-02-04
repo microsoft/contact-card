@@ -173,7 +173,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                     </ActionButton>
                     {this.state.profile.imAddress &&
                         <TooltipHost content="Chat">
-                            <ActionButton iconProps={{ iconName: "Chat" }} className="chat-link" onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
+                            <ActionButton iconProps={{ iconName: "Chat" }} className="chat-link" ariaLabel="Chat button" onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
                         </TooltipHost>}
                 </FocusZone>
             );
