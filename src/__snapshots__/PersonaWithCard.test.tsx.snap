@@ -31,6 +31,7 @@ exports[`renders Compact card 1`] = `
         content="Chat"
       >
         <CustomizedActionButton
+          ariaLabel="Chat button"
           className="chat-link"
           iconProps={
             Object {
@@ -365,6 +366,7 @@ exports[`renders next Person 1`] = `
         content="Chat"
       >
         <CustomizedActionButton
+          ariaLabel="Chat button"
           className="chat-link"
           iconProps={
             Object {
@@ -410,6 +412,7 @@ exports[`renders prev Person 1`] = `
         content="Chat"
       >
         <CustomizedActionButton
+          ariaLabel="Chat button"
           className="chat-link"
           iconProps={
             Object {
