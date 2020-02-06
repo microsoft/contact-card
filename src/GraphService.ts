@@ -133,42 +133,58 @@ export module GraphService {
 
 
     async function processBatch() {
-        const requests = [];
+        let batchNumber = 0;
+        const batchLimit = 20;
+        const requests = {
+            0: []
+        };
         const processingQueue = queue;
         queue = {};
+
+        // Create a dictionary mapping indices to arrays of 20 requests each
         for (const id of Object.keys(processingQueue)) {
             const req = processingQueue[id];
-            requests.push({
+
+            if (requests[batchNumber].length >= batchLimit) {
+                batchNumber += 1;
+                requests[batchNumber] = [];
+            }
+
+            requests[batchNumber].push({
                 id: req.id,
                 method: req.method,
                 url: req.url
             });
         }
 
-        const adToken = await GraphServiceAuthenticator.getAuthToken();
-        const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${adToken}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ requests })
-        });
+        // Process each batch of 20 requests
+        for (const current of Object.keys(requests)) {
+            const batch = requests[current];
+            const adToken = await GraphServiceAuthenticator.getAuthToken();
+            const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${adToken}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ batch })
+            });
 
-        try {
-            const batchResponse = await fetch(batchRequest);
-            if (batchResponse.ok) {
-                const data = await batchResponse.json();
-                for (const response of <BatchResponse[]>data.responses) {
-                    processingQueue[response.id].onResolve(response);
+            try {
+                const batchResponse = await fetch(batchRequest);
+                if (batchResponse.ok) {
+                    const data = await batchResponse.json();
+                    for (const response of <BatchResponse[]>data.responses) {
+                        processingQueue[response.id].onResolve(response);
+                    }
+                } else {
+                    throw buildErrorFromResponse(batchResponse);
                 }
-            } else {
-                throw buildErrorFromResponse(batchResponse);
-            }
-        } catch (e) {
-            // reject all
-            for (const id of Object.keys(processingQueue)) {
-                processingQueue[id].onReject(e);
+            } catch (e) {
+                // reject all
+                for (const id of Object.keys(processingQueue)) {
+                    processingQueue[id].onReject(e);
+                }
             }
         }
     }
