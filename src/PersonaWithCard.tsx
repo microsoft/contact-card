@@ -2,7 +2,7 @@ import * as React from "react";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
-import { autobind, css, ActionButton, AnimationClassNames, FocusZone, HoverCard, PersonaSize, Shimmer, TooltipHost } from "office-ui-fabric-react";
+import { autobind, css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost } from "office-ui-fabric-react";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
 import { renderSummary } from "./contactCard/Summary";
@@ -77,6 +77,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                 onCardVisible={() => this.onCardVisible()}
                 instantOpenOnClick={true}
                 trapFocus={true}
+                openHotKey={KeyCodes.enter}
                 className="persona-hover-card"
             >
                 <Persona
