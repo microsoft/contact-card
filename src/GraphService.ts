@@ -135,7 +135,7 @@ export module GraphService {
     async function processBatch() {
         let batchNumber = 0;
         const batchLimit = 20;
-        const requests = {
+        const batches = {
             0: []
         };
         const processingQueue = queue;
@@ -145,21 +145,21 @@ export module GraphService {
         for (const id of Object.keys(processingQueue)) {
             const req = processingQueue[id];
 
-            if (requests[batchNumber].length >= batchLimit) {
+            if (batches[batchNumber].length >= batchLimit) {
                 batchNumber += 1;
-                requests[batchNumber] = [];
+                batches[batchNumber] = [];
             }
 
-            requests[batchNumber].push({
+            batches[batchNumber].push({
                 id: req.id,
                 method: req.method,
                 url: req.url
             });
         }
 
-        // Process each batch of 20 requests
-        for (const current of Object.keys(requests)) {
-            const batch = requests[current];
+        // Process each batch of 20 requests one at a time
+        for (const current of Object.keys(batches)) {
+            const requests = batches[current];
             const adToken = await GraphServiceAuthenticator.getAuthToken();
             const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
                 method: "POST",
@@ -167,7 +167,7 @@ export module GraphService {
                     Authorization: `Bearer ${adToken}`,
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ batch })
+                body: JSON.stringify({ requests })
             });
 
             try {

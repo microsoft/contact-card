@@ -15,7 +15,7 @@ test("resolveProfile()", async () => {
         new Response(JSON.stringify({
             responses: [
                 {
-                    id: (await req.json()).batch[0].id,
+                    id: (await req.json()).requests[0].id,
                     body: buildProfileResponse(1),
                     status: 200
                 }
@@ -35,7 +35,7 @@ test("resolveProfile() when individual request error", async () => {
         new Response(JSON.stringify({
             responses: [
                 {
-                    id: (await req.json()).batch[0].id,
+                    id: (await req.json()).requests[0].id,
                     status: 500
                 }
             ]
