@@ -24,13 +24,11 @@ exports[`renders Summary w/o any manager 1`] = `
           aria-label="email"
           className="contact-icon"
           iconName="Mail"
-          id="emailIcon"
         />
         <StyledLinkBase
-          aria-labelledby="emailIcon emailLink"
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
-          id="emailLink"
           onClick={[Function]}
         >
           user1@contoso.com
@@ -43,13 +41,11 @@ exports[`renders Summary w/o any manager 1`] = `
           aria-label="phone"
           className="contact-icon"
           iconName="Phone"
-          id="phoneIcon"
         />
         <StyledLinkBase
-          aria-labelledby="phoneIcon phoneLink"
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
-          id="phoneLink"
           onClick={[Function]}
         >
           555-123-4561
@@ -113,13 +109,11 @@ exports[`renders Summary with loading manager 1`] = `
           aria-label="email"
           className="contact-icon"
           iconName="Mail"
-          id="emailIcon"
         />
         <StyledLinkBase
-          aria-labelledby="emailIcon emailLink"
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
-          id="emailLink"
           onClick={[Function]}
         >
           user1@contoso.com
@@ -132,13 +126,11 @@ exports[`renders Summary with loading manager 1`] = `
           aria-label="phone"
           className="contact-icon"
           iconName="Phone"
-          id="phoneIcon"
         />
         <StyledLinkBase
-          aria-labelledby="phoneIcon phoneLink"
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
-          id="phoneLink"
           onClick={[Function]}
         >
           555-123-4561
@@ -234,13 +226,11 @@ exports[`renders full Summary 1`] = `
           aria-label="email"
           className="contact-icon"
           iconName="Mail"
-          id="emailIcon"
         />
         <StyledLinkBase
-          aria-labelledby="emailIcon emailLink"
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
-          id="emailLink"
           onClick={[Function]}
         >
           user1@contoso.com
@@ -253,13 +243,11 @@ exports[`renders full Summary 1`] = `
           aria-label="phone"
           className="contact-icon"
           iconName="Phone"
-          id="phoneIcon"
         />
         <StyledLinkBase
-          aria-labelledby="phoneIcon phoneLink"
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
-          id="phoneLink"
           onClick={[Function]}
         >
           555-123-4561

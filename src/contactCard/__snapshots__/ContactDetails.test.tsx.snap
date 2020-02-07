@@ -6,32 +6,26 @@ exports[`renders ContactDetails w/o IM 1`] = `
     className="contact-details css-47"
   >
     <li>
-      <StyledLabelBase
-        id="emailLabel"
-      >
+      <StyledLabelBase>
         Email
       </StyledLabelBase>
       <StyledLinkBase
-        aria-labelledby="emailLabel emailLink"
+        aria-label="Email user1@contoso.com"
         className="contact-link email"
         href="mailto:user1@contoso.com"
-        id="emailLink"
         onClick={[Function]}
       >
         user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase
-        id="workPhoneLabel"
-      >
+      <StyledLabelBase>
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
-        aria-labelledby="workPhoneLabel workPhoneLink"
+        aria-label="Work phone 555-123-4561"
         className="contact-link business-phone"
         href="tel:555-123-4561"
-        id="workPhoneLink"
         onClick={[Function]}
       >
         555-123-4561
@@ -83,48 +77,39 @@ exports[`renders full ContactDetails 1`] = `
     className="contact-details css-47"
   >
     <li>
-      <StyledLabelBase
-        id="emailLabel"
-      >
+      <StyledLabelBase>
         Email
       </StyledLabelBase>
       <StyledLinkBase
-        aria-labelledby="emailLabel emailLink"
+        aria-label="Email user1@contoso.com"
         className="contact-link email"
         href="mailto:user1@contoso.com"
-        id="emailLink"
         onClick={[Function]}
       >
         user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase
-        id="chatLabel"
-      >
+      <StyledLabelBase>
         Chat
       </StyledLabelBase>
       <StyledLinkBase
-        aria-labelledby="chatLabel chatLink"
+        aria-label="Chat im-user1@contoso.com"
         className="contact-link chat"
         href="sip:im-user1@contoso.com"
-        id="chatLink"
         onClick={[Function]}
       >
         im-user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase
-        id="workPhoneLabel"
-      >
+      <StyledLabelBase>
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
-        aria-labelledby="workPhoneLabel workPhoneLink"
+        aria-label="Work phone 555-123-4561"
         className="contact-link business-phone"
         href="tel:555-123-4561"
-        id="workPhoneLink"
         onClick={[Function]}
       >
         555-123-4561
