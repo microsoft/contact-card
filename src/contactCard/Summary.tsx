@@ -30,13 +30,13 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             </ActionButton>
 
             <div className="contact-row">
-                <Icon iconName="Mail" className="contact-icon"/>
+                <Icon iconName="Mail" className="contact-icon" />
                 <Link href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)} aria-label={`Email ${profile.email}`}>{profile.email}</Link>
             </div>
             {
                 profile.businessPhone &&
                 <div className="contact-row">
-                    <Icon iconName="Phone" className="contact-icon"/>
+                    <Icon iconName="Phone" className="contact-icon" />
                     <Link href={`tel:${profile.businessPhone}`} className="contact-link business-phone" onClick={e => openLink(`tel:${profile.businessPhone}`, e)} aria-label={`Phone ${profile.businessPhone}`}>{profile.businessPhone}</Link>
                 </div>
             }
