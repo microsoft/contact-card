@@ -25,6 +25,7 @@ exports[`renders Summary w/o any manager 1`] = `
           iconName="Mail"
         />
         <StyledLinkBase
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
           onClick={[Function]}
@@ -40,6 +41,7 @@ exports[`renders Summary w/o any manager 1`] = `
           iconName="Phone"
         />
         <StyledLinkBase
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
           onClick={[Function]}
@@ -106,6 +108,7 @@ exports[`renders Summary with loading manager 1`] = `
           iconName="Mail"
         />
         <StyledLinkBase
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
           onClick={[Function]}
@@ -121,6 +124,7 @@ exports[`renders Summary with loading manager 1`] = `
           iconName="Phone"
         />
         <StyledLinkBase
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
           onClick={[Function]}
@@ -219,6 +223,7 @@ exports[`renders full Summary 1`] = `
           iconName="Mail"
         />
         <StyledLinkBase
+          aria-label="Email user1@contoso.com"
           className="contact-link email"
           href="mailto:user1@contoso.com"
           onClick={[Function]}
@@ -234,6 +239,7 @@ exports[`renders full Summary 1`] = `
           iconName="Phone"
         />
         <StyledLinkBase
+          aria-label="Phone 555-123-4561"
           className="contact-link business-phone"
           href="tel:555-123-4561"
           onClick={[Function]}

@@ -10,6 +10,7 @@ exports[`renders ContactDetails w/o IM 1`] = `
         Email
       </StyledLabelBase>
       <StyledLinkBase
+        aria-label="Email user1@contoso.com"
         className="contact-link email"
         href="mailto:user1@contoso.com"
         onClick={[Function]}
@@ -22,6 +23,7 @@ exports[`renders ContactDetails w/o IM 1`] = `
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
+        aria-label="Work phone 555-123-4561"
         className="contact-link business-phone"
         href="tel:555-123-4561"
         onClick={[Function]}
@@ -79,6 +81,7 @@ exports[`renders full ContactDetails 1`] = `
         Email
       </StyledLabelBase>
       <StyledLinkBase
+        aria-label="Email user1@contoso.com"
         className="contact-link email"
         href="mailto:user1@contoso.com"
         onClick={[Function]}
@@ -91,6 +94,7 @@ exports[`renders full ContactDetails 1`] = `
         Chat
       </StyledLabelBase>
       <StyledLinkBase
+        aria-label="Chat im-user1@contoso.com"
         className="contact-link chat"
         href="sip:im-user1@contoso.com"
         onClick={[Function]}
@@ -103,6 +107,7 @@ exports[`renders full ContactDetails 1`] = `
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
+        aria-label="Work phone 555-123-4561"
         className="contact-link business-phone"
         href="tel:555-123-4561"
         onClick={[Function]}
