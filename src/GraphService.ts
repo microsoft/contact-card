@@ -123,6 +123,10 @@ export module GraphService {
         });
 
         queue[`${lastRequestId}`] = { id: `${lastRequestId}`, url: relativeUrl, method, onResolve, onReject };
+        if (Object.keys(queue).length >= 20) {
+            await processBatch();
+            queue = {};
+        }
         if (batchTimer) {
             clearTimeout(batchTimer);
         }
@@ -133,58 +137,45 @@ export module GraphService {
 
 
     async function processBatch() {
-        let batchNumber = 0;
-        const batchLimit = 20;
-        const batches = {
-            0: []
-        };
+        const requests = [];
+        if (Object.keys(queue).length < 1) {
+            return;
+        }
         const processingQueue = queue;
         queue = {};
-
-        // Create a dictionary mapping indices to arrays of 20 requests each
         for (const id of Object.keys(processingQueue)) {
             const req = processingQueue[id];
-
-            if (batches[batchNumber].length >= batchLimit) {
-                batchNumber += 1;
-                batches[batchNumber] = [];
-            }
-
-            batches[batchNumber].push({
+            requests.push({
                 id: req.id,
                 method: req.method,
                 url: req.url
             });
         }
 
-        // Process each batch of 20 requests one at a time
-        for (const current of Object.keys(batches)) {
-            const requests = batches[current];
-            const adToken = await GraphServiceAuthenticator.getAuthToken();
-            const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
-                method: "POST",
-                headers: {
-                    Authorization: `Bearer ${adToken}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ requests })
-            });
+        const adToken = await GraphServiceAuthenticator.getAuthToken();
+        const batchRequest = new Request(`${graphBaseUrl}/v1.0/$batch`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${adToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ requests })
+        });
 
-            try {
-                const batchResponse = await fetch(batchRequest);
-                if (batchResponse.ok) {
-                    const data = await batchResponse.json();
-                    for (const response of <BatchResponse[]>data.responses) {
-                        processingQueue[response.id].onResolve(response);
-                    }
-                } else {
-                    throw buildErrorFromResponse(batchResponse);
+        try {
+            const batchResponse = await fetch(batchRequest);
+            if (batchResponse.ok) {
+                const data = await batchResponse.json();
+                for (const response of <BatchResponse[]>data.responses) {
+                    processingQueue[response.id].onResolve(response);
                 }
-            } catch (e) {
-                // reject all
-                for (const id of Object.keys(processingQueue)) {
-                    processingQueue[id].onReject(e);
-                }
+            } else {
+                throw buildErrorFromResponse(batchResponse);
+            }
+        } catch (e) {
+            // reject all
+            for (const id of Object.keys(processingQueue)) {
+                processingQueue[id].onReject(e);
             }
         }
     }
