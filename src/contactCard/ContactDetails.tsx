@@ -8,18 +8,18 @@ export function renderContactDetails(profile: IPersonaProfile): React.ReactNode 
     return (
         <ul className={css("contact-details", AnimationClassNames.slideLeftIn400)}>
             <li>
-                <Label>Email</Label>
-                <Link href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)}>{profile.email}</Link>
+                <Label id="emailLabel">Email</Label>
+                <Link id="emailLink" href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)} aria-labelledby="emailLabel emailLink">{profile.email}</Link>
             </li>
             {profile.imAddress && (
                 <li>
-                    <Label>Chat</Label>
-                    <Link href={`sip:${profile.imAddress}`} className="contact-link chat" onClick={e => openLink(`sip:${profile.imAddress}`, e)}>{profile.imAddress}</Link>
+                    <Label id="chatLabel">Chat</Label>
+                    <Link id="chatLink" href={`sip:${profile.imAddress}`} className="contact-link chat" onClick={e => openLink(`sip:${profile.imAddress}`, e)} aria-labelledby="chatLabel chatLink" >{profile.imAddress}</Link>
                 </li>
             )}
             <li>
-                <Label>Work phone</Label>
-                <Link href={`tel:${profile.businessPhone}`} className="contact-link business-phone" onClick={e => openLink(`tel:${profile.businessPhone}`, e)}>{profile.businessPhone}</Link>
+                <Label id="workPhoneLabel">Work phone</Label>
+                <Link id="workPhoneLink" href={`tel:${profile.businessPhone}`} className="contact-link business-phone" onClick={e => openLink(`tel:${profile.businessPhone}`, e)} aria-labelledby="workPhoneLabel workPhoneLink">{profile.businessPhone}</Link>
             </li>
             <li>
                 <Label>Company</Label>

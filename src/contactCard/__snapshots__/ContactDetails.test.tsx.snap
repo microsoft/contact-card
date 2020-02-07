@@ -6,24 +6,32 @@ exports[`renders ContactDetails w/o IM 1`] = `
     className="contact-details css-47"
   >
     <li>
-      <StyledLabelBase>
+      <StyledLabelBase
+        id="emailLabel"
+      >
         Email
       </StyledLabelBase>
       <StyledLinkBase
+        aria-labelledby="emailLabel emailLink"
         className="contact-link email"
         href="mailto:user1@contoso.com"
+        id="emailLink"
         onClick={[Function]}
       >
         user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase>
+      <StyledLabelBase
+        id="workPhoneLabel"
+      >
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
+        aria-labelledby="workPhoneLabel workPhoneLink"
         className="contact-link business-phone"
         href="tel:555-123-4561"
+        id="workPhoneLink"
         onClick={[Function]}
       >
         555-123-4561
@@ -75,36 +83,48 @@ exports[`renders full ContactDetails 1`] = `
     className="contact-details css-47"
   >
     <li>
-      <StyledLabelBase>
+      <StyledLabelBase
+        id="emailLabel"
+      >
         Email
       </StyledLabelBase>
       <StyledLinkBase
+        aria-labelledby="emailLabel emailLink"
         className="contact-link email"
         href="mailto:user1@contoso.com"
+        id="emailLink"
         onClick={[Function]}
       >
         user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase>
+      <StyledLabelBase
+        id="chatLabel"
+      >
         Chat
       </StyledLabelBase>
       <StyledLinkBase
+        aria-labelledby="chatLabel chatLink"
         className="contact-link chat"
         href="sip:im-user1@contoso.com"
+        id="chatLink"
         onClick={[Function]}
       >
         im-user1@contoso.com
       </StyledLinkBase>
     </li>
     <li>
-      <StyledLabelBase>
+      <StyledLabelBase
+        id="workPhoneLabel"
+      >
         Work phone
       </StyledLabelBase>
       <StyledLinkBase
+        aria-labelledby="workPhoneLabel workPhoneLink"
         className="contact-link business-phone"
         href="tel:555-123-4561"
+        id="workPhoneLink"
         onClick={[Function]}
       >
         555-123-4561
