@@ -283,7 +283,6 @@ exports[`renders PersonaWithCard initial state 1`] = `
   }
   instantOpenOnClick={true}
   onCardVisible={[Function]}
-  openHotKey={13}
   trapFocus={true}
 >
   <Persona
@@ -307,7 +306,6 @@ exports[`renders PersonaWithCard with extra props 1`] = `
   }
   instantOpenOnClick={true}
   onCardVisible={[Function]}
-  openHotKey={13}
   trapFocus={true}
 >
   <Persona
