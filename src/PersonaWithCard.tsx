@@ -40,6 +40,7 @@ interface IPersonaWithCardState {
 
 export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPersonaWithCardState> {
     private _isMounted: boolean;
+    private targetElementRef: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
     constructor(props: IPersonaWithCardProps) {
         super(props);
@@ -67,28 +68,31 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
 
     public render(): JSX.Element {
         return (
-            <HoverCard
-                expandingCardProps={{
-                    onRenderCompactCard: this.renderCompactCard,
-                    onRenderExpandedCard: this.renderExpandedCard,
-                    compactCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 145 : 145 - 60,
-                    expandedCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 385 : 385 + 60
-                }}
-                onCardVisible={() => this.onCardVisible()}
-                instantOpenOnClick={true}
-                trapFocus={true}
-                openHotKey={KeyCodes.enter}
-                className="persona-hover-card"
-            >
-                <Persona
-                    id={this.props.id}
-                    email={this.props.email}
-                    displayName={this.props.displayName}
-                    showMode={this.props.showMode}
-                    size={this.props.size}
-                    className="contact-card-persona"
-                />
-            </HoverCard>
+            <div ref={this.targetElementRef} data-is-focusable={true} tabIndex={0}>
+                <HoverCard
+                    expandingCardProps={{
+                        onRenderCompactCard: this.renderCompactCard,
+                        onRenderExpandedCard: this.renderExpandedCard,
+                        compactCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 145 : 145 - 60,
+                        expandedCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 385 : 385 + 60
+                    }}
+                    onCardVisible={() => this.onCardVisible()}
+                    instantOpenOnClick={true}
+                    trapFocus={true}
+                    openHotKey={KeyCodes.enter}
+                    className="persona-hover-card"
+                    target={this.targetElementRef.current}
+                >
+                    <Persona
+                        id={this.props.id}
+                        email={this.props.email}
+                        displayName={this.props.displayName}
+                        showMode={this.props.showMode}
+                        size={this.props.size}
+                        className="contact-card-persona"
+                    />
+                </HoverCard>
+            </div>
         );
     }
 
