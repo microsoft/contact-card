@@ -91,7 +91,7 @@ test("renders Expanded card with progress", async () => {
     GraphService.getManager = async () => Promise.resolve(buildProfile(2));
 
     const openedCard = Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
-    openedCard.find(HoverCard).props().onCardVisible!();
+    openedCard.find(HoverCard).props().onCardVisible();
 
     const expandedCard = renderExpandedCard(openedCard);
     expect(expandedCard).toMatchSnapshot();
