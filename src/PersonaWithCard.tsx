@@ -40,7 +40,7 @@ interface IPersonaWithCardState {
 
 export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPersonaWithCardState> {
     private _isMounted: boolean;
-    private targetElementRef: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
+    private readonly targetElementRef: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
     constructor(props: IPersonaWithCardProps) {
         super(props);
