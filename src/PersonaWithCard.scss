@@ -94,9 +94,12 @@
             .more-details {
                 padding-left: 0;
                 font-weight: bold;
-                color: #0078d4;
                 .ms-Button-label {
                     margin-left: 0;
+                }
+
+                &:hover, &:active, &:focus {
+                    color: #0078d4;
                 }
             }
         }
