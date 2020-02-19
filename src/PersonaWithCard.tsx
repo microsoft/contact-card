@@ -68,7 +68,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
 
     public render(): JSX.Element {
         return (
-            <div ref={this.targetElementRef} data-is-focusable={true} tabIndex={0}>
+            <div ref={this.targetElementRef} data-is-focusable="true" tabIndex={0}>
                 <HoverCard
                     expandingCardProps={{
                         onRenderCompactCard: this.renderCompactCard,
