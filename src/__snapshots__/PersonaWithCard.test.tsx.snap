@@ -272,7 +272,7 @@ exports[`renders Expanded card with progress 1`] = `
 
 exports[`renders PersonaWithCard initial state 1`] = `
 <div
-  data-is-focusable={true}
+  data-is-focusable="true"
   tabIndex={0}
 >
   <StyledHoverCardBase
@@ -302,7 +302,7 @@ exports[`renders PersonaWithCard initial state 1`] = `
 
 exports[`renders PersonaWithCard with extra props 1`] = `
 <div
-  data-is-focusable={true}
+  data-is-focusable="true"
   tabIndex={0}
 >
   <StyledHoverCardBase
