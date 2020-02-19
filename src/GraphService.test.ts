@@ -3,6 +3,7 @@ import "jest-fetch-mock";
 import { GraphService } from "./GraphService";
 import { GraphServiceAuthenticator } from "./";
 import { buildProfileResponse, buildProfile } from "./supporting/Profile";
+import { buildResponse } from "./supporting/Response";
 
 beforeEach(() => {
     fetchMock.resetMocks();
@@ -12,16 +13,9 @@ beforeEach(() => {
 
 test("resolveProfile()", async () => {
     fetchMock.mockImplementationOnce(async (req: Request) => Promise.resolve(
-        new Response(JSON.stringify({
-            responses: [
-                {
-                    id: (await req.json()).requests[0].id,
-                    body: buildProfileResponse(1),
-                    status: 200
-                }
-            ]
-        }))
+        buildResponse((await req.json()).requests[0].id, 200)
     ));
+
     const profile = await GraphService.resolveProfile("userId1");
     expect(profile).toEqual(buildProfile(1));
 
@@ -32,14 +26,7 @@ test("resolveProfile()", async () => {
 
 test("resolveProfile() when individual request error", async () => {
     fetchMock.mockImplementationOnce(async (req: Request) => Promise.resolve(
-        new Response(JSON.stringify({
-            responses: [
-                {
-                    id: (await req.json()).requests[0].id,
-                    status: 500
-                }
-            ]
-        }))
+        buildResponse((await req.json()).requests[0].id, 500)
     ));
     await expect(GraphService.resolveProfile("userId5")).rejects.toThrow("500");
 });
@@ -48,6 +35,40 @@ test("resolveProfile() when individual request error", async () => {
 test("resolveProfile() when batch fails", async () => {
     fetchMock.mockResponseOnce("", { status: 500, statusText: "err1" });
     await expect(GraphService.resolveProfile("userId6")).rejects.toThrow("err1");
+});
+
+
+test("resolveProfile() correctly batches when calls exceed API limit of 20", async () => {
+    jest.useRealTimers();
+    type SingleReq = { id: string; method: string; url: string };
+    type ReqType = { requests: SingleReq[] };
+    fetchMock
+        .mockImplementation(async (req: Request) => {
+            const reqs = <ReqType>(await req.json());
+
+            const responses: Response[] = [];
+            reqs.requests.forEach(r => {
+                responses.push(buildResponse(parseInt(r.id, 10), 200));
+            });
+
+            return responses;
+        });
+
+    // Create 100 profiles and fetch their details from API
+    const ids = [];
+    for (let i = 1; i <= 100; i++) {
+        ids.push(`userId${i}`);
+    }
+    const promises = [];
+    for (const currentId of ids) {
+        const promise = GraphService.resolveProfile(currentId).then((profile) => {/**/}).catch((err) => {/**/});
+        promises.push(promise);
+    }
+
+    await Promise.all(promises);
+
+    // There should be five calls to processBatch()
+    expect(fetchMock.mock.calls.length).toEqual(5);
 });
 
 

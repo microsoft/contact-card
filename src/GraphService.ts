@@ -123,6 +123,9 @@ export module GraphService {
         });
 
         queue[`${lastRequestId}`] = { id: `${lastRequestId}`, url: relativeUrl, method, onResolve, onReject };
+        if (Object.keys(queue).length >= 20) {
+            await processBatch();
+        }
         if (batchTimer) {
             clearTimeout(batchTimer);
         }
@@ -133,6 +136,10 @@ export module GraphService {
 
 
     async function processBatch() {
+        if (Object.keys(queue).length === 0) {
+            return;
+        }
+
         const requests = [];
         const processingQueue = queue;
         queue = {};
@@ -157,14 +164,7 @@ export module GraphService {
 
         try {
             const batchResponse = await fetch(batchRequest);
-            if (batchResponse.ok) {
-                const data = await batchResponse.json();
-                for (const response of <BatchResponse[]>data.responses) {
-                    processingQueue[response.id].onResolve(response);
-                }
-            } else {
-                throw buildErrorFromResponse(batchResponse);
-            }
+            await processResponse(batchResponse, processingQueue);
         } catch (e) {
             // reject all
             for (const id of Object.keys(processingQueue)) {
@@ -222,6 +222,19 @@ export module GraphService {
                 // tslint:disable-next-line:no-any
                 .filter((p: any) => p.accountEnabled !== false)
                 .map(buildProfile);
+        } else {
+            throw buildErrorFromResponse(response);
+        }
+    }
+
+
+    // tslint:disable-next-line: no-any
+    async function processResponse(response: Response, processingQueue: any) {
+        if (response.ok) {
+            const data = await response.json();
+            for (const res of <BatchResponse[]>data.responses) {
+                processingQueue[res.id].onResolve(res);
+            }
         } else {
             throw buildErrorFromResponse(response);
         }
