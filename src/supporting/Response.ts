@@ -10,4 +10,4 @@ export function buildResponse(userId: number, status: number) {
             }
         ]
     }));
-};
+}
