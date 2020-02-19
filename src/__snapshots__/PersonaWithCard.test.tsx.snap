@@ -81,7 +81,7 @@ exports[`renders Compact card w/o IM address 1`] = `
 exports[`renders Compact card with ContactDetails 1`] = `
 <div>
   <div
-    className="compact-card css-203"
+    className="compact-card css-202"
   >
     <CustomizedActionButton
       className="person"
@@ -271,53 +271,65 @@ exports[`renders Expanded card with progress 1`] = `
 `;
 
 exports[`renders PersonaWithCard initial state 1`] = `
-<StyledHoverCardBase
-  className="persona-hover-card"
-  expandingCardProps={
-    Object {
-      "compactCardHeight": 145,
-      "expandedCardHeight": 385,
-      "onRenderCompactCard": [Function],
-      "onRenderExpandedCard": [Function],
-    }
-  }
-  instantOpenOnClick={true}
-  onCardVisible={[Function]}
-  openHotKey={13}
-  trapFocus={true}
+<div
+  data-is-focusable="true"
+  tabIndex={0}
 >
-  <Persona
-    className="contact-card-persona"
-    id="userId1"
-    showMode={1}
-  />
-</StyledHoverCardBase>
+  <StyledHoverCardBase
+    className="persona-hover-card"
+    expandingCardProps={
+      Object {
+        "compactCardHeight": 145,
+        "expandedCardHeight": 385,
+        "onRenderCompactCard": [Function],
+        "onRenderExpandedCard": [Function],
+      }
+    }
+    instantOpenOnClick={true}
+    onCardVisible={[Function]}
+    openHotKey={13}
+    target={null}
+    trapFocus={true}
+  >
+    <Persona
+      className="contact-card-persona"
+      id="userId1"
+      showMode={1}
+    />
+  </StyledHoverCardBase>
+</div>
 `;
 
 exports[`renders PersonaWithCard with extra props 1`] = `
-<StyledHoverCardBase
-  className="persona-hover-card"
-  expandingCardProps={
-    Object {
-      "compactCardHeight": 145,
-      "expandedCardHeight": 385,
-      "onRenderCompactCard": [Function],
-      "onRenderExpandedCard": [Function],
-    }
-  }
-  instantOpenOnClick={true}
-  onCardVisible={[Function]}
-  openHotKey={13}
-  trapFocus={true}
+<div
+  data-is-focusable="true"
+  tabIndex={0}
 >
-  <Persona
-    className="contact-card-persona"
-    displayName="Initial Display Name 1"
-    id="userId1"
-    showMode={1}
-    size={15}
-  />
-</StyledHoverCardBase>
+  <StyledHoverCardBase
+    className="persona-hover-card"
+    expandingCardProps={
+      Object {
+        "compactCardHeight": 145,
+        "expandedCardHeight": 385,
+        "onRenderCompactCard": [Function],
+        "onRenderExpandedCard": [Function],
+      }
+    }
+    instantOpenOnClick={true}
+    onCardVisible={[Function]}
+    openHotKey={13}
+    target={null}
+    trapFocus={true}
+  >
+    <Persona
+      className="contact-card-persona"
+      displayName="Initial Display Name 1"
+      id="userId1"
+      showMode={1}
+      size={15}
+    />
+  </StyledHoverCardBase>
+</div>
 `;
 
 exports[`renders next Person 1`] = `
