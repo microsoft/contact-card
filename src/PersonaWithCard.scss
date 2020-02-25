@@ -1,4 +1,6 @@
 .persona-hover-card {
+    max-height: 100vh;
+
     .contact-card-persona {
         cursor: pointer;
     }
@@ -6,6 +8,7 @@
     .ms-ExpandingCard-expandedCardScrollRegion {
         overflow-y: auto;
         height: 100%;
+        max-height: 60vh;
     }
 
     .back-section {
