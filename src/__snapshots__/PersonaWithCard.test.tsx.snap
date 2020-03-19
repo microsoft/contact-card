@@ -279,8 +279,6 @@ exports[`renders PersonaWithCard initial state 1`] = `
     className="persona-hover-card"
     expandingCardProps={
       Object {
-        "compactCardHeight": 145,
-        "expandedCardHeight": 385,
         "onRenderCompactCard": [Function],
         "onRenderExpandedCard": [Function],
       }
@@ -309,8 +307,6 @@ exports[`renders PersonaWithCard with extra props 1`] = `
     className="persona-hover-card"
     expandingCardProps={
       Object {
-        "compactCardHeight": 145,
-        "expandedCardHeight": 385,
         "onRenderCompactCard": [Function],
         "onRenderExpandedCard": [Function],
       }
