@@ -72,9 +72,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                 <HoverCard
                     expandingCardProps={{
                         onRenderCompactCard: this.renderCompactCard,
-                        onRenderExpandedCard: this.renderExpandedCard,
-                        compactCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 145 : 145 - 60,
-                        expandedCardHeight: this.state.cardShowMode === CardShowModes.Summary ? 385 : 385 + 60
+                        onRenderExpandedCard: this.renderExpandedCard
                     }}
                     onCardVisible={() => this.onCardVisible()}
                     instantOpenOnClick={true}
