@@ -2,7 +2,7 @@ import * as React from "react";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
-import { autobind, css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost } from "@fluentui/react";
+import { css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost } from "@fluentui/react";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
 import { renderSummary } from "./contactCard/Summary";
@@ -95,13 +95,12 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    @autobind
-    private onCardVisible() {
+    private onCardVisible = () => {
         this.setState(this.buildStateFromProps(this.props), () => this.resolveProfile());        // reset the state
     }
 
 
-    private buildStateFromProps(props: IPersonaWithCardProps): IPersonaWithCardState {
+    private buildStateFromProps = (props: IPersonaWithCardProps): IPersonaWithCardState => {
         if (!props.id && !props.email) {
             throw new Error("Either id or email is required");
         }
@@ -123,8 +122,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    @autobind
-    private renderCompactCard() {
+    private renderCompactCard = () => {
         return (
             <>
                 {
@@ -167,7 +165,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    private renderCompactContacts(): React.ReactNode {
+    private renderCompactContacts = () => {
         return this.state.profile.email &&
             (
                 <FocusZone>
@@ -183,8 +181,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    @autobind
-    private renderExpandedCard() {
+    private renderExpandedCard = () => {
         return this.state.isProfileLoading ?
             (
                 <div className="extended-card">
@@ -203,20 +200,17 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    @autobind
-    private showSummary(): void {
+    private showSummary = () => {
         this.modifyState({ cardShowMode: CardShowModes.Summary });
     }
 
 
-    @autobind
-    private showContactDetails(): void {
+    private showContactDetails = () => {
         this.modifyState({ cardShowMode: CardShowModes.ContactDetails });
     }
 
 
-    @autobind
-    private showOrgHierarchy(): void {
+    private showOrgHierarchy = () => {
         this.modifyState({ cardShowMode: CardShowModes.OrgHierarchy });
 
         GraphService.getAllManagers(this.state.profile.id)
@@ -229,8 +223,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    @autobind
-    private showNextPerson(profile: IPersonaProfile | undefined) {
+    private showNextPerson = (profile: IPersonaProfile | undefined) => {
         if (!profile) {
             return;
         }
@@ -250,7 +243,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    private showPrevPerson() {
+    private showPrevPerson = () => {
         if (!this.state.history.length) {
             return;
         }
@@ -270,7 +263,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    private resolveProfile() {
+    private resolveProfile = () => {
         GraphService.resolveProfile(this.state.profile.id)
             .then(profile => {
                 this.modifyState({ profile, isProfileLoading: false });
@@ -289,7 +282,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     }
 
 
-    private modifyState(newState: Partial<IPersonaWithCardState>) {
+    private modifyState = (newState: Partial<IPersonaWithCardState>) => {
         const stateCopy: Partial<IPersonaWithCardState> = {};
         for (const key of Object.keys(this.state)) {
             stateCopy[key] = this.state[key];
