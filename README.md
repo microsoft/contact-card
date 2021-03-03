@@ -22,13 +22,7 @@ Main functionality:
 ## Installation
 
 ```shell
-npm i office-contact-card -s
-```
-
-You'd need to install these peer dependencies as well if you have not yet:
-
-```shell
-npm i react react-dom office-ui-fabric-react -s
+npm i office-contact-card
 ```
 
 ## Authentication

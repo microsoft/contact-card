@@ -5,7 +5,7 @@ import { buildProfile } from "./supporting/Profile";
 import { PersonaShowMode } from "./Types";
 import { GraphService } from "./GraphService";
 import { waitNextTick } from "./supporting/Promise";
-import { PersonaSize } from "office-ui-fabric-react";
+import { PersonaSize } from "@fluentui/react";
 
 jest.mock("./GraphService");
 

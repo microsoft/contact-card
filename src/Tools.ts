@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, BaseButton, LinkBase } from "office-ui-fabric-react";
+import { Button, BaseButton, LinkBase } from "@fluentui/react";
 
 export function openLink(url: string, e?: React.SyntheticEvent<HTMLAnchorElement | HTMLButtonElement | HTMLElement | HTMLDivElement | BaseButton | Button | LinkBase>) {
     let target: string | undefined = "_self";   // open in same window by default. This also prevents empty tabs for `mailto:` links in Chrome

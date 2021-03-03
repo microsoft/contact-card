@@ -1,5 +1,5 @@
 import * as React from "react";
-import { css, AnimationClassNames, Label, Link } from "office-ui-fabric-react";
+import { css, AnimationClassNames, Label, Link } from "@fluentui/react";
 import { IPersonaProfile } from "../Types";
 import { openLink } from "../Tools";
 
