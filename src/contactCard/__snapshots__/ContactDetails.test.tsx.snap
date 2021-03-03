@@ -3,7 +3,7 @@
 exports[`renders ContactDetails w/o IM 1`] = `
 <div>
   <ul
-    className="contact-details css-49"
+    className="contact-details css-53"
   >
     <li>
       <StyledLabelBase>
@@ -74,7 +74,7 @@ exports[`renders ContactDetails w/o IM 1`] = `
 exports[`renders full ContactDetails 1`] = `
 <div>
   <ul
-    className="contact-details css-49"
+    className="contact-details css-53"
   >
     <li>
       <StyledLabelBase>

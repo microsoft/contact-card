@@ -12,7 +12,7 @@ exports[`renders Summary w/o any manager 1`] = `
         onClick={[MockFunction]}
       >
         Contact 
-        <StyledIconBase
+        <Icon
           className="chevron-icon"
           iconName="ChevronRight"
         />
@@ -20,7 +20,7 @@ exports[`renders Summary w/o any manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Mail"
         />
@@ -36,7 +36,7 @@ exports[`renders Summary w/o any manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Phone"
         />
@@ -52,7 +52,7 @@ exports[`renders Summary w/o any manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="POI"
         />
@@ -95,7 +95,7 @@ exports[`renders Summary with loading manager 1`] = `
         onClick={[MockFunction]}
       >
         Contact 
-        <StyledIconBase
+        <Icon
           className="chevron-icon"
           iconName="ChevronRight"
         />
@@ -103,7 +103,7 @@ exports[`renders Summary with loading manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Mail"
         />
@@ -119,7 +119,7 @@ exports[`renders Summary with loading manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Phone"
         />
@@ -135,7 +135,7 @@ exports[`renders Summary with loading manager 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="POI"
         />
@@ -160,7 +160,7 @@ exports[`renders Summary with loading manager 1`] = `
         onClick={[MockFunction]}
       >
         Reports to 
-        <StyledIconBase
+        <Icon
           className="chevron-icon"
           iconName="ChevronRight"
         />
@@ -168,7 +168,7 @@ exports[`renders Summary with loading manager 1`] = `
       <div
         className="person"
       >
-        <StyledShimmerBase
+        <StyledShimmer
           shimmerElements={
             Array [
               Object {
@@ -210,7 +210,7 @@ exports[`renders full Summary 1`] = `
         onClick={[MockFunction]}
       >
         Contact 
-        <StyledIconBase
+        <Icon
           className="chevron-icon"
           iconName="ChevronRight"
         />
@@ -218,7 +218,7 @@ exports[`renders full Summary 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Mail"
         />
@@ -234,7 +234,7 @@ exports[`renders full Summary 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="Phone"
         />
@@ -250,7 +250,7 @@ exports[`renders full Summary 1`] = `
       <div
         className="contact-row"
       >
-        <StyledIconBase
+        <Icon
           className="contact-icon"
           iconName="POI"
         />
@@ -275,7 +275,7 @@ exports[`renders full Summary 1`] = `
         onClick={[MockFunction]}
       >
         Reports to 
-        <StyledIconBase
+        <Icon
           className="chevron-icon"
           iconName="ChevronRight"
         />
