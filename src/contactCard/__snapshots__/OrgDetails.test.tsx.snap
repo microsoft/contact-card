@@ -8,7 +8,7 @@ exports[`renders OrgDetails w/o directs 1`] = `
     Organization
   </StyledLabelBase>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-53"
   >
     <li
       key="1"
@@ -65,12 +65,12 @@ exports[`renders OrgDetails w/o directs 1`] = `
 exports[`renders OrgDetails w/o managers 1`] = `
 <div>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-53"
   >
     <li
       className="person"
     >
-      <StyledShimmerBase
+      <StyledShimmer
         shimmerElements={
           Array [
             Object {
@@ -95,7 +95,7 @@ exports[`renders OrgDetails w/o managers 1`] = `
     <li
       className="person"
     >
-      <StyledShimmerBase
+      <StyledShimmer
         shimmerElements={
           Array [
             Object {
@@ -120,7 +120,7 @@ exports[`renders OrgDetails w/o managers 1`] = `
     <li
       className="person"
     >
-      <StyledShimmerBase
+      <StyledShimmer
         shimmerElements={
           Array [
             Object {
@@ -151,7 +151,7 @@ exports[`renders full OrgDetails 1`] = `
     Organization
   </StyledLabelBase>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-53"
   >
     <li
       key="1"
