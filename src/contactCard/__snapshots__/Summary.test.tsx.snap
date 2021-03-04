@@ -168,7 +168,7 @@ exports[`renders Summary with loading manager 1`] = `
       <div
         className="person"
       >
-        <StyledShimmer
+        <StyledShimmerBase
           shimmerElements={
             Array [
               Object {

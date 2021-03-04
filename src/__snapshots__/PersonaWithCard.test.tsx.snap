@@ -83,7 +83,7 @@ exports[`renders Compact card w/o IM address 1`] = `
 exports[`renders Compact card with ContactDetails 1`] = `
 <div>
   <div
-    className="compact-card css-217"
+    className="compact-card css-165"
   >
     <CustomizedActionButton
       className="person"
@@ -259,13 +259,13 @@ exports[`renders Expanded card with progress 1`] = `
   <div
     className="extended-card"
   >
-    <StyledShimmer
+    <StyledShimmerBase
       className="shimmer"
     />
-    <StyledShimmer
+    <StyledShimmerBase
       className="shimmer"
     />
-    <StyledShimmer
+    <StyledShimmerBase
       className="shimmer"
     />
   </div>
