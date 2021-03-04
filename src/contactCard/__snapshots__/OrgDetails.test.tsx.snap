@@ -8,7 +8,7 @@ exports[`renders OrgDetails w/o directs 1`] = `
     Organization
   </StyledLabelBase>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-40"
   >
     <li
       key="1"
@@ -65,7 +65,7 @@ exports[`renders OrgDetails w/o directs 1`] = `
 exports[`renders OrgDetails w/o managers 1`] = `
 <div>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-40"
   >
     <li
       className="person"
@@ -151,7 +151,7 @@ exports[`renders full OrgDetails 1`] = `
     Organization
   </StyledLabelBase>
   <ul
-    className="org-hierarchy css-49"
+    className="org-hierarchy css-40"
   >
     <li
       key="1"

@@ -4,7 +4,7 @@ import { buildProfile } from "./supporting/Profile";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
 import { GraphService } from "./GraphService";
 import { waitNextTick } from "./supporting/Promise";
-import { PersonaSize, HoverCard } from "office-ui-fabric-react";
+import { PersonaSize, HoverCard } from "@fluentui/react";
 import { PersonaWithCard } from "./PersonaWithCard";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";

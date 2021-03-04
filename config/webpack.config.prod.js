@@ -72,9 +72,9 @@ const baseConfig = {
       amd: "ReactDOM",
       root: "ReactDOM"
     },
-    "office-ui-fabric-react": {
-      commonjs: "office-ui-fabric-react",
-      commonjs2: "office-ui-fabric-react",
+    "@fluentui/react": {
+      commonjs: "@fluentui/react",
+      commonjs2: "@fluentui/react",
       amd: "Fabric",
       root: "Fabric"
     }

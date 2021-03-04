@@ -1,5 +1,5 @@
 import * as React from "react";
-import { css, ActionButton, AnimationClassNames, Label, PersonaSize, Shimmer, ShimmerElementType } from "office-ui-fabric-react";
+import { css, ActionButton, AnimationClassNames, Label, PersonaSize, Shimmer, ShimmerElementType } from "@fluentui/react";
 import { Persona } from "../Persona";
 import { PersonaShowMode, IPersonaProfile } from "../Types";
 

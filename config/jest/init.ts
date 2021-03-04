@@ -1,7 +1,7 @@
 import {GlobalWithFetchMock} from "jest-fetch-mock";
 import * as Enzyme from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
-import { setIconOptions } from "office-ui-fabric-react";
+import { setIconOptions } from "@fluentui/react";
 
 // tslint:disable:prefer-type-cast no-var-requires no-require-imports
 

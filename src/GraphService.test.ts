@@ -61,7 +61,10 @@ test("resolveProfile() correctly batches when calls exceed API limit of 20", asy
     }
     const promises = [];
     for (const currentId of ids) {
-        const promise = GraphService.resolveProfile(currentId).then((profile) => {/**/}).catch((err) => {/**/});
+        const promise = GraphService
+            .resolveProfile(currentId)
+            .then((profile) => {/**/})
+            .catch((err) => {/**/});
         promises.push(promise);
     }
 

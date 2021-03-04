@@ -58,7 +58,7 @@
     "no-void-expression": [true, "ignore-arrow-function-shorthand"],
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
-    "react-this-binding-issue": [true, {"allow-anonymous-listeners": true, "bind-decorators": ["autobind"]} ],
+    "react-this-binding-issue": [true, {"allow-anonymous-listeners": true} ],
     "strict-boolean-expressions": false,
     "underscore-consistent-invocation": false,
     "use-simple-attributes": false,
