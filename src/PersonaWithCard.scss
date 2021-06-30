@@ -46,6 +46,18 @@
         .ms-Persona-secondaryText {
             font-size: 12px;
         }
+
+        .mail-link {
+            margin-top: 4px;
+        }
+        
+        .mail-link:focus::after{
+            outline: 0px!important;
+        }
+    
+        .mail-link:focus {
+            border: black solid 1px;
+        }
     }
     
     .extended-card {

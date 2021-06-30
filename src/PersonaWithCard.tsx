@@ -77,6 +77,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                     onCardVisible={() => this.onCardVisible()}
                     instantOpenOnClick={true}
                     trapFocus={true}
+                    setInitialFocus={true}
                     openHotKey={KeyCodes.enter}
                     className="persona-hover-card"
                     target={this.targetElementRef.current}
