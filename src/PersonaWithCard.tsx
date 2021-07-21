@@ -2,7 +2,7 @@ import * as React from "react";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
-import { css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost } from "@fluentui/react";
+import { css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost, FocusZoneDirection, FocusZoneTabbableElements } from "@fluentui/react";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
 import { renderSummary } from "./contactCard/Summary";
@@ -169,14 +169,19 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
     private renderCompactContacts = () => {
         return this.state.profile.email &&
             (
-                <FocusZone>
+                <FocusZone
+                    direction={FocusZoneDirection.horizontal}
+                    handleTabKey={FocusZoneTabbableElements.all}>
+
                     <ActionButton iconProps={{ iconName: "Mail" }} className="mail-link" onClick={e => openLink(`mailto:${this.state.profile.email}`, e)}>
                         Send email
                     </ActionButton>
+
                     {this.state.profile.imAddress &&
-                        <TooltipHost content="Chat">
-                            <ActionButton iconProps={{ iconName: "Chat" }} className="chat-link" ariaLabel="Chat button" onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} />
-                        </TooltipHost>}
+                        <ActionButton iconProps={{ iconName: "Chat" }} className="chat-link" onClick={e => openLink(`sip:${this.state.profile.imAddress}`, e)} >
+                            Chat
+                        </ActionButton>
+                    }
                 </FocusZone>
             );
     }
