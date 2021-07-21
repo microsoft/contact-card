@@ -13,7 +13,8 @@ exports[`renders Compact card 1`] = `
       size={14}
     />
     <FocusZone
-      direction={2}
+      direction={1}
+      handleTabKey={1}
       isCircularNavigation={false}
       shouldRaiseClicks={true}
     >
@@ -28,20 +29,17 @@ exports[`renders Compact card 1`] = `
       >
         Send email
       </CustomizedActionButton>
-      <StyledTooltipHostBase
-        content="Chat"
-      >
-        <CustomizedActionButton
-          ariaLabel="Chat button"
-          className="chat-link"
-          iconProps={
-            Object {
-              "iconName": "Chat",
-            }
+      <CustomizedActionButton
+        className="chat-link"
+        iconProps={
+          Object {
+            "iconName": "Chat",
           }
-          onClick={[Function]}
-        />
-      </StyledTooltipHostBase>
+        }
+        onClick={[Function]}
+      >
+        Chat
+      </CustomizedActionButton>
     </FocusZone>
   </div>
 </div>
@@ -60,7 +58,8 @@ exports[`renders Compact card w/o IM address 1`] = `
       size={14}
     />
     <FocusZone
-      direction={2}
+      direction={1}
+      handleTabKey={1}
       isCircularNavigation={false}
       shouldRaiseClicks={true}
     >
@@ -362,7 +361,8 @@ exports[`renders next Person 1`] = `
       size={14}
     />
     <FocusZone
-      direction={2}
+      direction={1}
+      handleTabKey={1}
       isCircularNavigation={false}
       shouldRaiseClicks={true}
     >
@@ -377,20 +377,17 @@ exports[`renders next Person 1`] = `
       >
         Send email
       </CustomizedActionButton>
-      <StyledTooltipHostBase
-        content="Chat"
-      >
-        <CustomizedActionButton
-          ariaLabel="Chat button"
-          className="chat-link"
-          iconProps={
-            Object {
-              "iconName": "Chat",
-            }
+      <CustomizedActionButton
+        className="chat-link"
+        iconProps={
+          Object {
+            "iconName": "Chat",
           }
-          onClick={[Function]}
-        />
-      </StyledTooltipHostBase>
+        }
+        onClick={[Function]}
+      >
+        Chat
+      </CustomizedActionButton>
     </FocusZone>
   </div>
 </div>
@@ -409,7 +406,8 @@ exports[`renders prev Person 1`] = `
       size={14}
     />
     <FocusZone
-      direction={2}
+      direction={1}
+      handleTabKey={1}
       isCircularNavigation={false}
       shouldRaiseClicks={true}
     >
@@ -424,20 +422,17 @@ exports[`renders prev Person 1`] = `
       >
         Send email
       </CustomizedActionButton>
-      <StyledTooltipHostBase
-        content="Chat"
-      >
-        <CustomizedActionButton
-          ariaLabel="Chat button"
-          className="chat-link"
-          iconProps={
-            Object {
-              "iconName": "Chat",
-            }
+      <CustomizedActionButton
+        className="chat-link"
+        iconProps={
+          Object {
+            "iconName": "Chat",
           }
-          onClick={[Function]}
-        />
-      </StyledTooltipHostBase>
+        }
+        onClick={[Function]}
+      >
+        Chat
+      </CustomizedActionButton>
     </FocusZone>
   </div>
 </div>
