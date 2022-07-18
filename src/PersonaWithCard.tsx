@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IPersonaProps as IPersonaPropsOF } from "./Persona";
+import { IPersonaProps as IPersonaPropsFluent } from "@fluentui/react";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
@@ -17,7 +17,7 @@ export interface IPersonaWithCardProps {
     displayName?: string;
     showMode: PersonaShowMode;
     size?: PersonaSize;
-    internalProps?: IPersonaPropsOF
+    internalProps?: IPersonaPropsFluent;
 }
 
 
