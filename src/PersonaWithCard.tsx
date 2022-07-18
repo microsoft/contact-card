@@ -1,4 +1,5 @@
 import * as React from "react";
+import { IPersonaProps as IPersonaPropsOF } from "./Persona";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
@@ -16,6 +17,7 @@ export interface IPersonaWithCardProps {
     displayName?: string;
     showMode: PersonaShowMode;
     size?: PersonaSize;
+    internalProps?: IPersonaPropsOF
 }
 
 
@@ -89,6 +91,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                         showMode={this.props.showMode}
                         size={this.props.size}
                         className="contact-card-persona"
+                        internalProps={this.props.internalProps}
                     />
                 </HoverCard>
             </div>
