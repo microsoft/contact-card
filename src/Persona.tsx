@@ -1,6 +1,5 @@
 import * as React from "react";
-import { IPersonaProps as IPersonaPropsFluent } from "@fluentui/react";
-import { Persona as PersonaOF, PersonaSize } from "@fluentui/react";
+import { Persona as PersonaOF, PersonaSize, IPersonaProps as IPersonaPropsFluent } from "@fluentui/react";
 import { IPersonaProfile, PersonaShowMode, ShowModeFlags } from "./Types";
 import { GraphService } from "./GraphService";
 
