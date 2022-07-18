@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Persona as PersonaOF, PersonaSize } from "@fluentui/react";
+import { Persona as PersonaOF, PersonaSize, IPersonaProps as IPersonaPropsFluent } from "@fluentui/react";
 import { IPersonaProfile, PersonaShowMode, ShowModeFlags } from "./Types";
 import { GraphService } from "./GraphService";
 
@@ -10,6 +10,7 @@ export interface IPersonaProps {
     showMode: PersonaShowMode;
     size?: PersonaSize;
     className?: string;
+    internalProps?: IPersonaPropsFluent;
 }
 
 
@@ -59,6 +60,7 @@ export class Persona extends React.Component<IPersonaProps, IPersonaState> {
                 tertiaryText={this.props.showMode & ShowModeFlags.Department ? this.state.profile.department : undefined}
                 imageUrl={this.state.photoUrl}
                 imageAlt={this.state.profile.displayName}
+                {...this.props.internalProps}
             />
         );
     }
