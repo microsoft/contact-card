@@ -45,7 +45,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick}>
+            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} aria-expanded={true}>
                 Show more
             </ActionButton>
         </li>
