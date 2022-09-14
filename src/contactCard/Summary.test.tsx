@@ -8,19 +8,19 @@ import { openLink } from "../Tools";
 
 
 test("renders full Summary", () => {
-    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), buildProfile(2), false, jest.fn(), jest.fn(), jest.fn())}</div>);
+    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), buildProfile(2), false, true, jest.fn(), jest.fn(), jest.fn())}</div>);
     expect(wrap).toMatchSnapshot();
 });
 
 
 test("renders Summary with loading manager", () => {
-    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), undefined, true, jest.fn(), jest.fn(), jest.fn())}</div>);
+    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), undefined, true, true, jest.fn(), jest.fn(), jest.fn())}</div>);
     expect(wrap).toMatchSnapshot();
 });
 
 
 test("renders Summary w/o any manager", () => {
-    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), undefined, false, jest.fn(), jest.fn(), jest.fn())}</div>);
+    const wrap = Enzyme.shallow(<div>{renderSummary(buildProfile(1), undefined, false, true, jest.fn(), jest.fn(), jest.fn())}</div>);
     expect(wrap).toMatchSnapshot();
 });
 
