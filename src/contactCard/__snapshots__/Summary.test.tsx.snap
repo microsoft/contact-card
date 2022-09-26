@@ -152,6 +152,10 @@ exports[`renders Summary with loading manager 1`] = `
         onClick={[MockFunction]}
       >
         Show more
+        <Icon
+          className="chevron-icon"
+          iconName="ChevronRight"
+        />
       </CustomizedActionButton>
     </li>
     <li>
@@ -192,6 +196,10 @@ exports[`renders Summary with loading manager 1`] = `
         onClick={[MockFunction]}
       >
         Show organization
+        <Icon
+          className="chevron-icon"
+          iconName="ChevronRight"
+        />
       </CustomizedActionButton>
     </li>
   </ul>
@@ -267,6 +275,10 @@ exports[`renders full Summary 1`] = `
         onClick={[MockFunction]}
       >
         Show more
+        <Icon
+          className="chevron-icon"
+          iconName="ChevronRight"
+        />
       </CustomizedActionButton>
     </li>
     <li>
@@ -296,6 +308,10 @@ exports[`renders full Summary 1`] = `
         onClick={[MockFunction]}
       >
         Show organization
+        <Icon
+          className="chevron-icon"
+          iconName="ChevronRight"
+        />
       </CustomizedActionButton>
     </li>
   </ul>
