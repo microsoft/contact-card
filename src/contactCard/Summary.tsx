@@ -46,7 +46,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>&nbsp;{profile.city}</span>
             </div>
             <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} >
-                Show more
+                Show more <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
         </li>
     );
@@ -84,7 +84,7 @@ function renderOrgSummary(
                 </>
             }
             <ActionButton className="more-details org-details" onClick={onOrgDetailsClick}>
-                Show organization
+                Show organization <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
         </li>
     );
