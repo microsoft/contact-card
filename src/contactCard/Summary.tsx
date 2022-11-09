@@ -28,7 +28,9 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
                 Contact <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
-
+            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick}>
+                Show more
+            </ActionButton>
             <div className="contact-row">
                 <Icon iconName="Mail" className="contact-icon" />
                 <Link href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)} aria-label={`Email ${profile.email}`}>{profile.email}</Link>
@@ -45,9 +47,6 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick}>
-                Show more
-            </ActionButton>
         </li>
     );
 }
@@ -66,6 +65,9 @@ function renderOrgSummary(
                     <ActionButton className="section-title org-details-button" onClick={onOrgDetailsClick}>
                         Reports to <Icon iconName="ChevronRight" className="chevron-icon" />
                     </ActionButton>
+                    <ActionButton className="more-details org-details" onClick={onOrgDetailsClick}>
+                        Show organization
+                    </ActionButton>
                     {
                         manager ?
                             <ActionButton className="person manager" onClick={() => onPersonaClick(manager)}>
@@ -83,9 +85,6 @@ function renderOrgSummary(
                     }
                 </>
             }
-            <ActionButton className="more-details org-details" onClick={onOrgDetailsClick}>
-                Show organization
-            </ActionButton>
         </li>
     );
 }
