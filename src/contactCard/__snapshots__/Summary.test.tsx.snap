@@ -8,6 +8,15 @@ exports[`renders Summary w/o any manager 1`] = `
   >
     <li>
       <CustomizedActionButton
+        aria-expanded={true}
+        aria-label="Show more"
+        className="more-details contact-details"
+        onClick={[MockFunction]}
+        tabIndex={0}
+      >
+        Show more
+      </CustomizedActionButton>
+      <CustomizedActionButton
         className="section-title contact-details-button"
         onClick={[MockFunction]}
       >
@@ -64,14 +73,6 @@ exports[`renders Summary w/o any manager 1`] = `
           Redmond
         </span>
       </div>
-      <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
-        className="more-details contact-details"
-        onClick={[MockFunction]}
-      >
-        Show more
-      </CustomizedActionButton>
     </li>
     <li>
       <CustomizedActionButton
@@ -93,6 +94,15 @@ exports[`renders Summary with loading manager 1`] = `
   >
     <li>
       <CustomizedActionButton
+        aria-expanded={true}
+        aria-label="Show more"
+        className="more-details contact-details"
+        onClick={[MockFunction]}
+        tabIndex={0}
+      >
+        Show more
+      </CustomizedActionButton>
+      <CustomizedActionButton
         className="section-title contact-details-button"
         onClick={[MockFunction]}
       >
@@ -149,14 +159,6 @@ exports[`renders Summary with loading manager 1`] = `
           Redmond
         </span>
       </div>
-      <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
-        className="more-details contact-details"
-        onClick={[MockFunction]}
-      >
-        Show more
-      </CustomizedActionButton>
     </li>
     <li>
       <CustomizedActionButton
@@ -210,6 +212,15 @@ exports[`renders full Summary 1`] = `
   >
     <li>
       <CustomizedActionButton
+        aria-expanded={true}
+        aria-label="Show more"
+        className="more-details contact-details"
+        onClick={[MockFunction]}
+        tabIndex={0}
+      >
+        Show more
+      </CustomizedActionButton>
+      <CustomizedActionButton
         className="section-title contact-details-button"
         onClick={[MockFunction]}
       >
@@ -266,14 +277,6 @@ exports[`renders full Summary 1`] = `
           Redmond
         </span>
       </div>
-      <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
-        className="more-details contact-details"
-        onClick={[MockFunction]}
-      >
-        Show more
-      </CustomizedActionButton>
     </li>
     <li>
       <CustomizedActionButton
