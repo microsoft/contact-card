@@ -82,7 +82,7 @@ exports[`renders Compact card w/o IM address 1`] = `
 exports[`renders Compact card with ContactDetails 1`] = `
 <div>
   <div
-    className="compact-card css-213"
+    className="compact-card css-165"
   >
     <CustomizedActionButton
       className="person"

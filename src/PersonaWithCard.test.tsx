@@ -4,7 +4,7 @@ import { buildProfile } from "./supporting/Profile";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
 import { GraphService } from "./GraphService";
 import { waitNextTick } from "./supporting/Promise";
-import { PersonaSize, HoverCard} from "@fluentui/react";
+import { PersonaSize, HoverCard } from "@fluentui/react";
 import { PersonaWithCard } from "./PersonaWithCard";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
@@ -89,10 +89,9 @@ test("opens link in Compact card", async () => {
 test("renders Expanded card with progress", async () => {
     GraphService.resolveProfile = async () => Promise.resolve(buildProfile(1));
     GraphService.getManager = async () => Promise.resolve(buildProfile(2));
-    
-    const openedCard =  Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
-    const hoverCard = openedCard.find(HoverCard);
-    hoverCard?.props()?.onCardVisible?.();
+
+    const openedCard = Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
+    openedCard.find(HoverCard).props().onCardVisible();
 
     const expandedCard = renderExpandedCard(openedCard);
     expect(expandedCard).toMatchSnapshot();
@@ -182,11 +181,10 @@ async function renderOpenedCard(profile?: IPersonaProfile) {
     const extractNum = (s: string) => parseInt(s.match(/\d+/)![0], 10);
     GraphService.resolveProfile = async (userId) => Promise.resolve(profile || buildProfile(extractNum(userId)));
     GraphService.getManager = async (userId) => Promise.resolve(buildProfile(extractNum(userId) + 1));
+
     const wrap = Enzyme.shallow(<PersonaWithCard id="userId1" showMode={PersonaShowMode.NameOnly} />);
-    const hoverCardProps = wrap.find(HoverCard).props();
-    if(hoverCardProps && hoverCardProps.onCardVisible){
-        hoverCardProps.onCardVisible();
-    }
+    wrap.find(HoverCard).props().onCardVisible();
+
     await waitNextTick();
 
     return wrap;
@@ -194,12 +192,10 @@ async function renderOpenedCard(profile?: IPersonaProfile) {
 
 
 function renderCompactCard(openedCard: Enzyme.ShallowWrapper) {
-    const expandingCardProps =  openedCard.find(HoverCard).props()?.expandingCardProps;
-    return Enzyme.shallow(<div>{expandingCardProps?.onRenderCompactCard?.()}</div>)
+    return Enzyme.shallow(<div>{openedCard.find(HoverCard).props().expandingCardProps.onRenderCompactCard()}</div>);
 }
 
 
 function renderExpandedCard(openedCard: Enzyme.ShallowWrapper) {
-    const expandingCardProps =  openedCard.find(HoverCard).props()?.expandingCardProps;
-    return expandingCardProps && expandingCardProps.onRenderExpandedCard ? Enzyme.shallow(<div>{expandingCardProps.onRenderExpandedCard()}</div>): <></>;
+    return Enzyme.shallow(<div>{openedCard.find(HoverCard).props().expandingCardProps.onRenderExpandedCard()}</div>);
 }

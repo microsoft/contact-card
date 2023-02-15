@@ -65,8 +65,6 @@ exports[`renders Summary w/o any manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
       >
@@ -150,8 +148,6 @@ exports[`renders Summary with loading manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
       >
@@ -267,8 +263,6 @@ exports[`renders full Summary 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
       >
