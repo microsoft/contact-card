@@ -25,9 +25,6 @@ export function renderSummary(
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
     return (
         <li>
-            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} aria-label="Show more" aria-expanded={true} tabIndex={0}>
-                Show more
-            </ActionButton>
             <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
                 Contact <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
@@ -48,6 +45,9 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
+            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} aria-label="Show more" aria-expanded={true}>
+                Show more
+            </ActionButton>
         </li>
     );
 }
