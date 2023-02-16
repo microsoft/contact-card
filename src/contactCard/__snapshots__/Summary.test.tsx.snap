@@ -69,6 +69,7 @@ exports[`renders Summary w/o any manager 1`] = `
         aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
+        tabIndex={0}
       >
         Show more
       </CustomizedActionButton>
@@ -154,6 +155,7 @@ exports[`renders Summary with loading manager 1`] = `
         aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
+        tabIndex={0}
       >
         Show more
       </CustomizedActionButton>
@@ -271,6 +273,7 @@ exports[`renders full Summary 1`] = `
         aria-label="Show more"
         className="more-details contact-details"
         onClick={[MockFunction]}
+        tabIndex={0}
       >
         Show more
       </CustomizedActionButton>
