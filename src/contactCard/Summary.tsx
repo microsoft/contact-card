@@ -12,18 +12,23 @@ export function renderSummary(
     onContactDetailsClick: () => void,
     onOrgDetailsClick: () => void,
     onPersonaClick: (profile: IPersonaProfile) => void
-): React.ReactNode {
-    return (
+  ): React.ReactNode {
+    function handleContactDetailsClick() {
+      onContactDetailsClick();
+      const button = document.querySelector('[data-focus="button"]');
+      if (button) {
+        (button as HTMLButtonElement).focus();
+      }
+    }  
+      return (
         <ul tabIndex={-1} className="summary">
             {renderContactSummary(profile, onContactDetailsClick)}
             {renderOrgSummary(manager, isManagerLoading, onOrgDetailsClick, onPersonaClick)}
         </ul>
-    );
-}
-
-
+    );  
+  
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
-    return (
+ return (
         <li>
             <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
                 Contact <Icon iconName="ChevronRight" className="chevron-icon" />
@@ -45,7 +50,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} aria-label="Show more" aria-expanded={true}>
+            <ActionButton className="more-details contact-details" onClick={handleContactDetailsClick} aria-label="Show more" aria-expanded={true} data-focus="button" aria-live="polite">
                 Show more
             </ActionButton>
         </li>
@@ -88,4 +93,5 @@ function renderOrgSummary(
             </ActionButton>
         </li>
     );
+}
 }

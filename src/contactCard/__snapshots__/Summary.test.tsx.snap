@@ -67,10 +67,12 @@ exports[`renders Summary w/o any manager 1`] = `
       <CustomizedActionButton
         aria-expanded={true}
         aria-label="Show more"
+        aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
+        data-focus="button"
+        onClick={[Function]}
       >
-        Show more
+        Show more Click Here
       </CustomizedActionButton>
     </li>
     <li>
@@ -152,10 +154,12 @@ exports[`renders Summary with loading manager 1`] = `
       <CustomizedActionButton
         aria-expanded={true}
         aria-label="Show more"
+        aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
+        data-focus="button"
+        onClick={[Function]}
       >
-        Show more
+        Show more Click Here
       </CustomizedActionButton>
     </li>
     <li>
@@ -269,10 +273,12 @@ exports[`renders full Summary 1`] = `
       <CustomizedActionButton
         aria-expanded={true}
         aria-label="Show more"
+        aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
+        data-focus="button"
+        onClick={[Function]}
       >
-        Show more
+        Show more Click Here
       </CustomizedActionButton>
     </li>
     <li>
