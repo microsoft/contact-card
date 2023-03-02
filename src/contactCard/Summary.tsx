@@ -19,7 +19,7 @@ export function renderSummary(
             {renderOrgSummary(manager, isManagerLoading, onOrgDetailsClick, onPersonaClick)}
         </ul>
     ); 
-    }
+}
 
     let isExpanded = false;
     function handleContactDetailsClick(onContactDetailsClick: () => void) {
