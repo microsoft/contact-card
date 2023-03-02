@@ -11,17 +11,26 @@ export function renderSummary(
     isManagerLoading: boolean,
     onContactDetailsClick: () => void,
     onOrgDetailsClick: () => void,
-    onPersonaClick: (profile: IPersonaProfile) => void
-): React.ReactNode {
-    return (
+    onPersonaClick: (profile: IPersonaProfile) => void,
+  ): React.ReactNode {
+      return (
         <ul tabIndex={-1} className="summary">
             {renderContactSummary(profile, onContactDetailsClick)}
             {renderOrgSummary(manager, isManagerLoading, onOrgDetailsClick, onPersonaClick)}
         </ul>
-    );
-}
+    ); 
+    }
 
-
+    let isExpanded = false;
+    function handleContactDetailsClick(onContactDetailsClick: () => void) {
+        onContactDetailsClick();
+        const button = document.querySelector('[data-focus="button"]');
+        if (button) {
+          (button as HTMLButtonElement).focus();
+        }
+        isExpanded = true;
+    }
+  
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
     return (
         <li>
@@ -45,7 +54,8 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details contact-details" onClick={onContactDetailsClick} aria-label="Show more" aria-expanded={true} tabIndex={0} aria-live="polite">
+            <ActionButton className="more-details contact-details" onClick={() => handleContactDetailsClick(onContactDetailsClick)} aria-label={isExpanded ? 'show more button expanded' : 'show more button collapsed'} aria-expanded={isExpanded} data-focus="button" aria-live="polite">
+            {isExpanded ? "expanded" : "collapsed"}
                 Show more
             </ActionButton>
         </li>
