@@ -11,9 +11,9 @@ export function renderSummary(
     isManagerLoading: boolean,
     onContactDetailsClick: () => void,
     onOrgDetailsClick: () => void,
-    onPersonaClick: (profile: IPersonaProfile) => void,
-  ): React.ReactNode {
-      return (
+    onPersonaClick: (profile: IPersonaProfile) => void
+): React.ReactNode {
+    return (
         <ul tabIndex={-1} className="summary">
             {renderContactSummary(profile, onContactDetailsClick)}
             {renderOrgSummary(manager, isManagerLoading, onOrgDetailsClick, onPersonaClick)}
