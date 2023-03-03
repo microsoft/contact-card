@@ -65,7 +65,6 @@ exports[`renders Summary w/o any manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={false}
         aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
@@ -153,7 +152,6 @@ exports[`renders Summary with loading manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={false}
         aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
@@ -273,7 +271,6 @@ exports[`renders full Summary 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={false}
         aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
