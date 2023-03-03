@@ -65,13 +65,13 @@ exports[`renders Summary w/o any manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
+        aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
-        tabIndex={0}
+        data-focus="button"
+        onClick={[Function]}
       >
+        collapsed
         Show more
       </CustomizedActionButton>
     </li>
@@ -152,13 +152,13 @@ exports[`renders Summary with loading manager 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
+        aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
-        tabIndex={0}
+        data-focus="button"
+        onClick={[Function]}
       >
+        collapsed
         Show more
       </CustomizedActionButton>
     </li>
@@ -271,13 +271,13 @@ exports[`renders full Summary 1`] = `
         </span>
       </div>
       <CustomizedActionButton
-        aria-expanded={true}
-        aria-label="Show more"
+        aria-label="show more button collapsed"
         aria-live="polite"
         className="more-details contact-details"
-        onClick={[MockFunction]}
-        tabIndex={0}
+        data-focus="button"
+        onClick={[Function]}
       >
+        collapsed
         Show more
       </CustomizedActionButton>
     </li>
