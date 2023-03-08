@@ -65,7 +65,6 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 Show more
             </ActionButton>
             <div id="product-catalog"></div>
-            <h1 aria-hidden="true">Product Catalog</h1>
         </li>
     );
 }
