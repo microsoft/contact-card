@@ -56,11 +56,11 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>&nbsp;{profile.city}</span>
             </div>
             <ActionButton 
-            className="more-details contact-details" 
-            onClick={() => handleContactDetailsClick(onContactDetailsClick)} 
-            aria-label={isExpanded ? "show more button expanded" : "show more"} 
-            data-focus="button" 
-            aria-live="polite"
+                className="more-details contact-details" 
+                onClick={() => handleContactDetailsClick(onContactDetailsClick)} 
+                aria-label={isExpanded ? "show more button expanded" : "show more"} 
+                data-focus="button" 
+                aria-live="polite"
             >
                 Show more
             </ActionButton>
