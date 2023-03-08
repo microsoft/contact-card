@@ -73,6 +73,14 @@ exports[`renders Summary w/o any manager 1`] = `
       >
         Show more
       </CustomizedActionButton>
+      <div
+        id="product-catalog"
+      />
+      <h1
+        aria-hidden="true"
+      >
+        Product Catalog
+      </h1>
     </li>
     <li>
       <CustomizedActionButton
@@ -159,6 +167,14 @@ exports[`renders Summary with loading manager 1`] = `
       >
         Show more
       </CustomizedActionButton>
+      <div
+        id="product-catalog"
+      />
+      <h1
+        aria-hidden="true"
+      >
+        Product Catalog
+      </h1>
     </li>
     <li>
       <CustomizedActionButton
@@ -277,6 +293,14 @@ exports[`renders full Summary 1`] = `
       >
         Show more
       </CustomizedActionButton>
+      <div
+        id="product-catalog"
+      />
+      <h1
+        aria-hidden="true"
+      >
+        Product Catalog
+      </h1>
     </li>
     <li>
       <CustomizedActionButton

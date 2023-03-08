@@ -27,7 +27,7 @@ export function renderSummary(
         const button = document.querySelector('[data-focus="button"]');
         if (button) {
           (button as HTMLButtonElement).focus();
-          button.setAttribute("aria-describedby", "product catalog");
+          button.setAttribute("aria-describedby", "product-catalog");
         }
         isExpanded = true;
     }
@@ -55,9 +55,17 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
                 <span>{profile.officeLocation}</span>
                 <span>&nbsp;{profile.city}</span>
             </div>
-            <ActionButton className="more-details contact-details" onClick={() => handleContactDetailsClick(onContactDetailsClick)} aria-label={isExpanded ? "show more button expanded" : "show more"} data-focus="button" aria-live="polite">
+            <ActionButton 
+            className="more-details contact-details" 
+            onClick={() => handleContactDetailsClick(onContactDetailsClick)} 
+            aria-label={isExpanded ? "show more button expanded" : "show more"} 
+            data-focus="button" 
+            aria-live="polite"
+            >
                 Show more
             </ActionButton>
+            <div id="product-catalog"></div>
+            <h1 aria-hidden="true">Product Catalog</h1>
         </li>
     );
 }
