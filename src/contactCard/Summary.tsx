@@ -27,7 +27,6 @@ export function renderSummary(
         const button = document.querySelector('[data-focus="button"]');
         if (button) {
           (button as HTMLButtonElement).focus();
-          button.setAttribute("aria-describedby", "product-catalog");
         }
         isExpanded = true;
     }
@@ -64,7 +63,6 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             >
                 Show more
             </ActionButton>
-            <div id="product-catalog"></div>
         </li>
     );
 }

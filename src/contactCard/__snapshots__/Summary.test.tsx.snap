@@ -73,9 +73,6 @@ exports[`renders Summary w/o any manager 1`] = `
       >
         Show more
       </CustomizedActionButton>
-      <div
-        id="product-catalog"
-      />
     </li>
     <li>
       <CustomizedActionButton
@@ -162,9 +159,6 @@ exports[`renders Summary with loading manager 1`] = `
       >
         Show more
       </CustomizedActionButton>
-      <div
-        id="product-catalog"
-      />
     </li>
     <li>
       <CustomizedActionButton
@@ -283,9 +277,6 @@ exports[`renders full Summary 1`] = `
       >
         Show more
       </CustomizedActionButton>
-      <div
-        id="product-catalog"
-      />
     </li>
     <li>
       <CustomizedActionButton
