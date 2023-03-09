@@ -4,7 +4,6 @@ import { Persona } from "../Persona";
 import { IPersonaProfile, PersonaShowMode } from "../Types";
 import { openLink } from "../Tools";
 
-
 export function renderSummary(
     profile: IPersonaProfile,
     manager: IPersonaProfile | undefined,
@@ -20,18 +19,16 @@ export function renderSummary(
         </ul>
     ); 
 }
-
-    let isExpanded = false;
-    function handleContactDetailsClick(onContactDetailsClick: () => void) {
-        onContactDetailsClick();
-        const button = document.querySelector('[data-focus="button"]');
-        if (button) {
-          (button as HTMLButtonElement).focus();
-        }
-        isExpanded = true;
-    }
   
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
+    
+    let isExpanded = false;
+    function handleContactDetailsClick(onContactDetailsClick: () => void) {
+        isExpanded = true;
+        document.querySelector("title")?.setAttribute("aria-hidden", "true");
+        onContactDetailsClick();
+    }
+
     return (
         <li>
             <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
@@ -57,11 +54,13 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             <ActionButton 
                 className="more-details contact-details" 
                 onClick={() => handleContactDetailsClick(onContactDetailsClick)} 
-                aria-label={isExpanded ? "show more button expanded" : "show more"} 
+                aria-label={"show more"} 
                 data-focus="button" 
-                aria-live="polite"
+                aria-live="assertive"
+                aria-expanded={isExpanded}
+                role="button"
             >
-                Show more
+                Show more!
             </ActionButton>
         </li>
     );
