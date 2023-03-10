@@ -20,33 +20,40 @@ export function renderSummary(
         </ul>
     ); 
 }
-
-    let isExpanded = false;
-    function handleContactDetailsClick(onContactDetailsClick: () => void) {
-        onContactDetailsClick();
-        const button = document.querySelector('[data-focus="button"]');
-        if (button) {
-          (button as HTMLButtonElement).focus();
-        }
-        isExpanded = true;
-    }
   
 function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: () => void): React.ReactNode {
     return (
         <li>
-            <ActionButton className="section-title contact-details-button" onClick={onContactDetailsClick}>
+            <ActionButton 
+                className="section-title contact-details-button" 
+                onClick={e => handleDetailsClick(onContactDetailsClick, e)}
+            >
                 Contact <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
 
             <div className="contact-row">
                 <Icon iconName="Mail" className="contact-icon" />
-                <Link href={`mailto:${profile.email}`} className="contact-link email" onClick={e => openLink(`mailto:${profile.email}`, e)} aria-label={`Email ${profile.email}`}>{profile.email}</Link>
+                <Link 
+                    href={`mailto:${profile.email}`} 
+                    className="contact-link email" 
+                    onClick={e => openLink(`mailto:${profile.email}`, e)}
+                    aria-label={`Email ${profile.email}`}
+                >
+                    {profile.email}
+                </Link>
             </div>
             {
                 profile.businessPhone &&
                 <div className="contact-row">
                     <Icon iconName="Phone" className="contact-icon" />
-                    <Link href={`tel:${profile.businessPhone}`} className="contact-link business-phone" onClick={e => openLink(`tel:${profile.businessPhone}`, e)} aria-label={`Phone ${profile.businessPhone}`}>{profile.businessPhone}</Link>
+                    <Link 
+                        href={`tel:${profile.businessPhone}`}
+                        className="contact-link business-phone"
+                        onClick={e => openLink(`tel:${profile.businessPhone}`, e)}
+                        aria-label={`Phone ${profile.businessPhone}`}
+                    >
+                        {profile.businessPhone}
+                    </Link>
                 </div>
             }
             <div className="contact-row">
@@ -56,10 +63,11 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             </div>
             <ActionButton 
                 className="more-details contact-details" 
-                onClick={() => handleContactDetailsClick(onContactDetailsClick)} 
-                aria-label={isExpanded ? "show more button expanded" : "show more"} 
+                onClick={e => handleDetailsClick(onContactDetailsClick, e)} 
+                aria-label={"show more"} 
                 data-focus="button" 
-                aria-live="polite"
+                aria-live="assertive"
+                role="button"
             >
                 Show more
             </ActionButton>
@@ -78,12 +86,15 @@ function renderOrgSummary(
         <li>
             {(manager || isManagerLoading) &&
                 <>
-                    <ActionButton className="section-title org-details-button" onClick={onOrgDetailsClick}>
+                    <ActionButton 
+                        className="section-title org-details-button" 
+                        onClick={e => handleDetailsClick(onOrgDetailsClick, e)}
+                    >
                         Reports to <Icon iconName="ChevronRight" className="chevron-icon" />
                     </ActionButton>
                     {
-                        manager ?
-                            <ActionButton className="person manager" onClick={() => onPersonaClick(manager)}>
+                        manager
+                            ? <ActionButton className="person manager" onClick={() => onPersonaClick(manager)}>
                                 <Persona
                                     id={manager.id}
                                     displayName={manager.displayName}
@@ -91,16 +102,31 @@ function renderOrgSummary(
                                     size={PersonaSize.size40}
                                 />
                             </ActionButton>
-                            :
-                            <div className="person">
-                                <Shimmer shimmerElements={[{ type: ShimmerElementType.circle, height: 40 }, { type: ShimmerElementType.gap, width: 12 }, { type: ShimmerElementType.line }]} width={"80%"} />
+                            : <div className="person">
+                                <Shimmer
+                                    shimmerElements={[{ type: ShimmerElementType.circle, height: 40 }, { type: ShimmerElementType.gap, width: 12 }, { type: ShimmerElementType.line }]} 
+                                    width={"80%"} 
+                                />
                             </div>
                     }
                 </>
             }
-            <ActionButton className="more-details org-details" onClick={onOrgDetailsClick}>
-                Show organization
+            <ActionButton 
+                className="more-details org-details"
+                onClick={e => handleDetailsClick(onOrgDetailsClick, e)}
+            >
+                    Show organization
             </ActionButton>
         </li>
     );
+}
+
+const handleDetailsClick = (onDetailsClick: () => void, e?: React.MouseEvent<any>) => {
+    // Manually set focus on contact card for screen readers
+    if (e) {
+        e.preventDefault();
+        (document.querySelector(".ms-Callout") as HTMLElement).focus();
+    }
+    
+    onDetailsClick();
 }
