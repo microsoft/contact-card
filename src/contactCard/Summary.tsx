@@ -26,7 +26,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
         <li>
             <ActionButton 
                 className="section-title contact-details-button" 
-                onClick={e => handleDetailsClick(e, onContactDetailsClick)}
+                onClick={e => handleDetailsClick(onContactDetailsClick, e)}
             >
                 Contact <Icon iconName="ChevronRight" className="chevron-icon" />
             </ActionButton>
@@ -63,7 +63,7 @@ function renderContactSummary(profile: IPersonaProfile, onContactDetailsClick: (
             </div>
             <ActionButton 
                 className="more-details contact-details" 
-                onClick={e => handleDetailsClick(e, onContactDetailsClick)} 
+                onClick={e => handleDetailsClick(onContactDetailsClick, e)} 
                 aria-label={"show more"} 
                 data-focus="button" 
                 aria-live="assertive"
@@ -88,7 +88,7 @@ function renderOrgSummary(
                 <>
                     <ActionButton 
                         className="section-title org-details-button" 
-                        onClick={e => handleDetailsClick(e, onOrgDetailsClick)}
+                        onClick={e => handleDetailsClick(onOrgDetailsClick, e)}
                     >
                         Reports to <Icon iconName="ChevronRight" className="chevron-icon" />
                     </ActionButton>
@@ -113,7 +113,7 @@ function renderOrgSummary(
             }
             <ActionButton 
                 className="more-details org-details"
-                onClick={e => handleDetailsClick(e, onOrgDetailsClick)}
+                onClick={e => handleDetailsClick(onOrgDetailsClick, e)}
             >
                     Show organization
             </ActionButton>
@@ -121,10 +121,12 @@ function renderOrgSummary(
     );
 }
 
-const handleDetailsClick = (e: React.MouseEvent<any>, onDetailsClick: () => void) => {
+const handleDetailsClick = (onDetailsClick: () => void, e?: React.MouseEvent<any>) => {
     // Manually set focus on contact card for screen readers
-    e.preventDefault();
-    (document.querySelector(".ms-Callout") as HTMLElement).focus();
+    if (e) {
+        e.preventDefault();
+        (document.querySelector(".ms-Callout") as HTMLElement).focus();
+    }
     
     onDetailsClick();
 }

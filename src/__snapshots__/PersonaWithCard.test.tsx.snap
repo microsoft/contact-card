@@ -13,6 +13,8 @@ exports[`renders Compact card 1`] = `
       size={14}
     />
     <FocusZone
+      allowFocusRoot={true}
+      defaultTabbableElement=".mail-link"
       direction={1}
       handleTabKey={1}
       isCircularNavigation={false}
@@ -58,6 +60,8 @@ exports[`renders Compact card w/o IM address 1`] = `
       size={14}
     />
     <FocusZone
+      allowFocusRoot={true}
+      defaultTabbableElement=".mail-link"
       direction={1}
       handleTabKey={1}
       isCircularNavigation={false}
@@ -103,6 +107,7 @@ exports[`renders Compact card with ContactDetails 1`] = `
 exports[`renders Expanded card with ContactDetails 1`] = `
 <div>
   <div
+    aria-live="polite"
     className="extended-card"
   >
     <div
@@ -129,6 +134,7 @@ exports[`renders Expanded card with ContactDetails 1`] = `
 exports[`renders Expanded card with OrgHierarchy 1`] = `
 <div>
   <div
+    aria-live="polite"
     className="extended-card"
   >
     <div
@@ -212,6 +218,7 @@ exports[`renders Expanded card with OrgHierarchy 1`] = `
 exports[`renders Expanded card with Summary 1`] = `
 <div>
   <div
+    aria-live="polite"
     className="extended-card"
   >
     <div
@@ -287,6 +294,7 @@ exports[`renders PersonaWithCard initial state 1`] = `
     instantOpenOnClick={true}
     onCardVisible={[Function]}
     openHotKey={13}
+    setAriaDescribedBy={true}
     setInitialFocus={true}
     target={null}
     trapFocus={true}
@@ -316,6 +324,7 @@ exports[`renders PersonaWithCard with extra props 1`] = `
     instantOpenOnClick={true}
     onCardVisible={[Function]}
     openHotKey={13}
+    setAriaDescribedBy={true}
     setInitialFocus={true}
     target={null}
     trapFocus={true}
@@ -361,6 +370,8 @@ exports[`renders next Person 1`] = `
       size={14}
     />
     <FocusZone
+      allowFocusRoot={true}
+      defaultTabbableElement=".mail-link"
       direction={1}
       handleTabKey={1}
       isCircularNavigation={false}
@@ -406,6 +417,8 @@ exports[`renders prev Person 1`] = `
       size={14}
     />
     <FocusZone
+      allowFocusRoot={true}
+      defaultTabbableElement=".mail-link"
       direction={1}
       handleTabKey={1}
       isCircularNavigation={false}
@@ -441,6 +454,7 @@ exports[`renders prev Person 1`] = `
 exports[`switches to summaryMode when clicking on person in Compact card 1`] = `
 <div>
   <div
+    aria-live="polite"
     className="extended-card"
   >
     <div
