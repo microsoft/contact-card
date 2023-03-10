@@ -3,7 +3,18 @@ import { IPersonaProps as IPersonaPropsFluent } from "@fluentui/react";
 import { Persona } from "./Persona";
 import { GraphService } from "./GraphService";
 import { PersonaShowMode, IPersonaProfile } from "./Types";
-import { css, ActionButton, AnimationClassNames, FocusZone, KeyCodes, HoverCard, PersonaSize, Shimmer, TooltipHost, FocusZoneDirection, FocusZoneTabbableElements } from "@fluentui/react";
+import { css, 
+    ActionButton, 
+    AnimationClassNames, 
+    FocusZone, 
+    KeyCodes, 
+    HoverCard, 
+    PersonaSize, 
+    Shimmer, 
+    TooltipHost, 
+    FocusZoneDirection, 
+    FocusZoneTabbableElements 
+} from "@fluentui/react";
 import { renderContactDetails } from "./contactCard/ContactDetails";
 import { renderOrgHierarchy } from "./contactCard/OrgDetails";
 import { renderSummary } from "./contactCard/Summary";
@@ -83,6 +94,7 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                     openHotKey={KeyCodes.enter}
                     className="persona-hover-card"
                     target={this.targetElementRef.current}
+                    setAriaDescribedBy={true}
                 >
                     <Persona
                         id={this.props.id}
@@ -173,6 +185,8 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
         return this.state.profile.email &&
             (
                 <FocusZone
+                    allowFocusRoot={true}
+                    defaultTabbableElement={".mail-link"}
                     direction={FocusZoneDirection.horizontal}
                     handleTabKey={FocusZoneTabbableElements.all}>
 
@@ -200,10 +214,24 @@ export class PersonaWithCard extends React.Component<IPersonaWithCardProps, IPer
                 </div>
             ) :
             (
-                <div className="extended-card">
-                    {this.state.cardShowMode === CardShowModes.Summary && renderSummary(this.state.profile, this.state.manager, this.state.isManagerLoading, this.showContactDetails, this.showOrgHierarchy, this.showNextPerson)}
+                <div className="extended-card" aria-live="polite">
+                    {this.state.cardShowMode === CardShowModes.Summary && 
+                        renderSummary(this.state.profile, 
+                            this.state.manager, 
+                            this.state.isManagerLoading, 
+                            this.showContactDetails, 
+                            this.showOrgHierarchy, 
+                            this.showNextPerson
+                        )
+                    }
                     {this.state.cardShowMode === CardShowModes.ContactDetails && renderContactDetails(this.state.profile)}
-                    {this.state.cardShowMode === CardShowModes.OrgHierarchy && renderOrgHierarchy(this.state.profile, this.state.allManagers, this.state.directs, this.showNextPerson)}
+                    {this.state.cardShowMode === CardShowModes.OrgHierarchy && 
+                        renderOrgHierarchy(this.state.profile, 
+                            this.state.allManagers, 
+                            this.state.directs, 
+                            this.showNextPerson
+                        )
+                    }
                 </div>
             );
     }
