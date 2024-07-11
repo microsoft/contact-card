@@ -25,7 +25,7 @@ exports[`renders OrgDetails w/o directs 1`] = `
         />
       </CustomizedActionButton>
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
       key="spl-1"
     />
@@ -44,7 +44,7 @@ exports[`renders OrgDetails w/o directs 1`] = `
         />
       </CustomizedActionButton>
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
       key="spl-0"
     />
@@ -89,7 +89,7 @@ exports[`renders OrgDetails w/o managers 1`] = `
         width="80%"
       />
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
     />
     <li
@@ -114,7 +114,7 @@ exports[`renders OrgDetails w/o managers 1`] = `
         width="80%"
       />
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
     />
     <li
@@ -168,7 +168,7 @@ exports[`renders full OrgDetails 1`] = `
         />
       </CustomizedActionButton>
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
       key="spl-1"
     />
@@ -187,7 +187,7 @@ exports[`renders full OrgDetails 1`] = `
         />
       </CustomizedActionButton>
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
       key="spl-0"
     />
@@ -201,7 +201,7 @@ exports[`renders full OrgDetails 1`] = `
         size={13}
       />
     </li>
-    <div
+    <li
       className="hierarchy-splitter"
     />
     <li
