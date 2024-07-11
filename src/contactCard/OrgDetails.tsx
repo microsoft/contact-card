@@ -26,9 +26,9 @@ export function renderOrgHierarchy(profile: IPersonaProfile, allManagers: IPerso
         (
             <ul className={css("org-hierarchy", AnimationClassNames.slideLeftIn400)}>
                 <li className="person"><Shimmer shimmerElements={[{ type: ShimmerElementType.circle, height: 48 }, { type: ShimmerElementType.gap, width: 12 }, { type: ShimmerElementType.line }]} width={"80%"} /></li>
-                <div className="hierarchy-splitter" />
+                <li className="hierarchy-splitter" />
                 <li className="person"><Shimmer shimmerElements={[{ type: ShimmerElementType.circle, height: 48 }, { type: ShimmerElementType.gap, width: 12 }, { type: ShimmerElementType.line }]} width={"80%"} /></li>
-                <div className="hierarchy-splitter" />
+                <li className="hierarchy-splitter" />
                 <li className="person"><Shimmer shimmerElements={[{ type: ShimmerElementType.circle, height: 48 }, { type: ShimmerElementType.gap, width: 12 }, { type: ShimmerElementType.line }]} width={"80%"} /></li>
             </ul>
         );
@@ -52,7 +52,7 @@ function renderAllManagers(allManagers: IPersonaProfile[], onPersonaClick: (prof
                 </ActionButton>
             </li>
         );
-        res.push(<div className="hierarchy-splitter" key={`spl-${i}`} />);
+        res.push(<li className="hierarchy-splitter" key={`spl-${i}`} />);
     }
 
     return res;
@@ -67,7 +67,7 @@ function renderDirects(directs: IPersonaProfile[] | undefined, onPersonaClick: (
     let key = 0;
     return (
         <>
-            <div className="hierarchy-splitter" />
+            <li className="hierarchy-splitter" />
             <li className="directs">
                 <Label className="directs-label">Direct reports ({directs.length})</Label>
                 <ul>
